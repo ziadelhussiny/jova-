@@ -1,0 +1,52 @@
+{%- comment -%}
+  Renders a decorative line icon. The visible label always lives next to the icon,
+  so the SVG is hidden from assistive technology.
+{%- endcomment -%}
+<svg
+  class="jv-icon {{ class }}"
+  viewBox="0 0 24 24"
+  width="24"
+  height="24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.6"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  aria-hidden="true"
+  focusable="false"
+>
+  {%- case icon -%}
+    {%- when 'truck' -%}
+      <path d="M3 6h11v11H3zM14 10h4l3 3v4h-7z"/><path d="M6 17a2 2 0 1 0 4 0M16 17a2 2 0 1 0 4 0"/>
+    {%- when 'badge' -%}
+      <path d="m12 3 2 2.1 2.9-.2.9 2.8 2.5 1.6-1.2 2.7 1.2 2.7-2.5 1.6-.9 2.8-2.9-.2L12 21l-2-2.1-2.9.2-.9-2.8-2.5-1.6L4.9 12 3.7 9.3l2.5-1.6.9-2.8 2.9.2z"/><path d="m9 12 2 2 4-4"/>
+    {%- when 'card' -%}
+      <rect x="2.5" y="5" width="19" height="14" rx="2"/><path d="M2.5 9h19M6 15h4"/>
+    {%- when 'box' -%}
+      <path d="m12 3 8 4.5v9L12 21l-8-4.5v-9zM4 7.5l8 4.5 8-4.5M12 12v9M8 5.3l8 4.5"/>
+    {%- when 'globe' -%}
+      <circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.5 3 14 0 18M12 3c-3 3.5-3 14 0 18"/>
+    {%- when 'diamond' -%}
+      <path d="m4 8 3-4h10l3 4-8 12zM4 8h16M8 4l-1 4 5 12 5-12-1-4M7 8h10"/>
+    {%- when 'shield' -%}
+      <path d="M12 3 20 6v5c0 5-3.4 8.4-8 10-4.6-1.6-8-5-8-10V6z"/><path d="m8.5 12 2 2 5-5"/>
+    {%- when 'heart' -%}
+      <path d="M20.8 5.8a5 5 0 0 0-7.1 0L12 7.5l-1.7-1.7a5 5 0 1 0-7.1 7.1L12 21l8.8-8.1a5 5 0 0 0 0-7.1z"/>
+    {%- when 'phone' -%}
+      <path d="M6.5 3h3l1.3 4-2 1.5a15 15 0 0 0 6.7 6.7l1.5-2 4 1.3v3c0 1.7-1.3 3-3 3A15 15 0 0 1 3.5 6c0-1.7 1.3-3 3-3z"/>
+    {%- when 'message' -%}
+      <path d="M21 11.5a8.3 8.3 0 0 1-12.3 7.3L3 20.5l1.7-5.4A8.5 8.5 0 1 1 21 11.5z"/><path d="M8 10h8M8 14h5"/>
+    {%- when 'mail' -%}
+      <rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/>
+    {%- when 'clock' -%}
+      <circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>
+    {%- when 'return' -%}
+      <path d="M8 7H4v-4M4.5 7A9 9 0 1 1 4 15"/><path d="M9 12h6M12 9l3 3-3 3"/>
+    {%- when 'people' -%}
+      <circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2"/><path d="M3 20c0-4 2-6 6-6s6 2 6 6M15 15c3 0 5 2 5 5"/>
+    {%- when 'store' -%}
+      <path d="M4 9h16l-1-5H5zM5 9v11h14V9M9 20v-6h6v6"/><path d="M4 9a2 2 0 0 0 4 0 2 2 0 0 0 4 0 2 2 0 0 0 4 0 2 2 0 0 0 4 0"/>
+    {%- else -%}
+      <path d="M12 3v18M3 12h18"/>
+  {%- endcase -%}
+</svg>

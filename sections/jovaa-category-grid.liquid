@@ -1,0 +1,70 @@
+{%- assign heading_id = 'JovaaCategories-' | append: section.id -%}
+<section class="jv-section jv-section--compact" aria-labelledby="{{ heading_id }}">
+  <div class="jv-shell">
+    {%- if section.settings.heading != blank -%}
+      {% render 'jovaa-heading', id: heading_id, eyebrow: section.settings.eyebrow, heading: section.settings.heading, subheading: section.settings.subheading %}
+    {%- else -%}
+      <h2 class="visually-hidden" id="{{ heading_id }}">{{ section.settings.accessible_title | escape }}</h2>
+    {%- endif -%}
+    <div class="jv-grid jv-categories" style="--jv-columns: {{ section.settings.columns }};">
+      {%- for block in section.blocks -%}
+        {%- assign category_alt = block.settings.image.alt | default: block.settings.heading -%}
+        <article class="jv-category" {{ block.shopify_attributes }} data-jovaa-reveal>
+          {%- if block.settings.image != blank -%}
+            {{ block.settings.image
+              | image_url: width: 1400
+              | image_tag:
+                widths: '400, 600, 900, 1200, 1400',
+                sizes: '(max-width: 749px) 100vw, 50vw',
+                loading: 'lazy',
+                alt: category_alt
+            }}
+          {%- else -%}
+            <div class="jv-media-placeholder">{{ 'collection-1' | placeholder_svg_tag }}</div>
+          {%- endif -%}
+          <div class="jv-category__content">
+            <h3>{{ block.settings.heading | escape }}</h3>
+            {%- if block.settings.english_heading != blank -%}<p lang="en">{{ block.settings.english_heading | escape }}</p>{%- endif -%}
+            {%- if block.settings.button_label != blank -%}
+              <a class="jv-button jv-button--light" href="{{ block.settings.link | default: routes.all_products_collection_url }}">{{ block.settings.button_label | escape }}</a>
+            {%- endif -%}
+          </div>
+        </article>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "JOVAA • Categories",
+  "tag": "section",
+  "class": "jovaa-section",
+  "max_blocks": 4,
+  "settings": [
+    { "type": "text", "id": "accessible_title", "label": "عنوان قارئ الشاشة", "default": "تسوق حسب الفئة" },
+    { "type": "text", "id": "eyebrow", "label": "النص الصغير" },
+    { "type": "text", "id": "heading", "label": "العنوان" },
+    { "type": "text", "id": "subheading", "label": "العنوان الإنجليزي" },
+    { "type": "range", "id": "columns", "label": "عدد الأعمدة", "min": 1, "max": 4, "step": 1, "default": 2 }
+  ],
+  "blocks": [
+    {
+      "type": "category", "name": "فئة",
+      "settings": [
+        { "type": "image_picker", "id": "image", "label": "الصورة" },
+        { "type": "text", "id": "heading", "label": "العنوان", "default": "العطور" },
+        { "type": "text", "id": "english_heading", "label": "العنوان الإنجليزي", "default": "PERFUMES" },
+        { "type": "text", "id": "button_label", "label": "نص الزر", "default": "تسوق الآن" },
+        { "type": "url", "id": "link", "label": "الرابط" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "JOVAA • Categories",
+      "blocks": [{ "type": "category" }, { "type": "category", "settings": { "heading": "الحقائب", "english_heading": "BAGS" } }]
+    }
+  ]
+}
+{% endschema %}

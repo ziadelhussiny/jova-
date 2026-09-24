@@ -1,0 +1,86 @@
+{%- liquid
+  assign hero_alt = section.settings.image.alt | default: section.settings.heading
+  assign hero_loading = 'lazy'
+  assign hero_priority = 'auto'
+  if section.index <= 2
+    assign hero_loading = 'eager'
+    assign hero_priority = 'high'
+  endif
+-%}
+
+<section
+  class="jv-hero"
+  aria-labelledby="JovaaHero-{{ section.id }}"
+  style="--jv-focus: {{ section.settings.image.presentation.focal_point | default: 'center' }}; min-height: {{ section.settings.height_desktop }}px;"
+>
+  <div class="jv-hero__media">
+    {%- if section.settings.image != blank -%}
+      <picture>
+        {%- if section.settings.mobile_image != blank -%}
+          <source
+            media="(max-width: 749px)"
+            srcset="
+              {{ section.settings.mobile_image | image_url: width: 375 }} 375w,
+              {{ section.settings.mobile_image | image_url: width: 550 }} 550w,
+              {{ section.settings.mobile_image | image_url: width: 750 }} 750w
+            "
+            sizes="100vw"
+          >
+        {%- endif -%}
+        {{ section.settings.image
+          | image_url: width: 2400
+          | image_tag:
+            widths: '750, 1100, 1500, 1920, 2400',
+            sizes: '100vw',
+            loading: hero_loading,
+            fetchpriority: hero_priority,
+            alt: hero_alt
+        }}
+      </picture>
+    {%- else -%}
+      <div class="jv-media-placeholder">{{ 'lifestyle-1' | placeholder_svg_tag }}</div>
+    {%- endif -%}
+  </div>
+
+  <div class="jv-hero__content jv-hero__content--{{ section.settings.alignment }}" data-jovaa-reveal>
+    <div class="jv-hero__content-inner">
+      {%- if section.settings.eyebrow != blank -%}<span class="jv-hero__eyebrow">{{ section.settings.eyebrow | escape }}</span>{%- endif -%}
+      <h1 id="JovaaHero-{{ section.id }}">{{ section.settings.heading | escape }}</h1>
+      {%- if section.settings.english_heading != blank -%}<span class="jv-hero__english" lang="en">{{ section.settings.english_heading | escape }}</span>{%- endif -%}
+      {%- if section.settings.text != blank -%}<div class="jv-hero__text rte">{{ section.settings.text }}</div>{%- endif -%}
+      {%- if section.settings.button_label != blank -%}
+        <a class="jv-button jv-button--light" href="{{ section.settings.button_link | default: routes.all_products_collection_url }}">
+          {{ section.settings.button_label | escape }} <span aria-hidden="true">←</span>
+        </a>
+      {%- endif -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "JOVAA • Hero",
+  "tag": "section",
+  "class": "jovaa-section",
+  "settings": [
+    { "type": "image_picker", "id": "image", "label": "صورة سطح المكتب" },
+    { "type": "image_picker", "id": "mobile_image", "label": "صورة الموبايل" },
+    { "type": "text", "id": "eyebrow", "label": "النص الصغير", "default": "أناقة تُحكى" },
+    { "type": "text", "id": "heading", "label": "العنوان", "default": "الفخامة في كل تفصيلة" },
+    { "type": "text", "id": "english_heading", "label": "العنوان الإنجليزي", "default": "MORE THAN A FRAGRANCE — A LIFESTYLE" },
+    { "type": "richtext", "id": "text", "label": "الوصف" },
+    { "type": "text", "id": "button_label", "label": "نص الزر", "default": "تسوق الآن" },
+    { "type": "url", "id": "button_link", "label": "رابط الزر" },
+    {
+      "type": "select", "id": "alignment", "label": "محاذاة المحتوى", "default": "start",
+      "options": [
+        { "value": "start", "label": "البداية" },
+        { "value": "center", "label": "المنتصف" },
+        { "value": "end", "label": "النهاية" }
+      ]
+    },
+    { "type": "range", "id": "height_desktop", "label": "الارتفاع", "min": 420, "max": 820, "step": 20, "unit": "px", "default": 620 }
+  ],
+  "presets": [{ "name": "JOVAA • Hero" }]
+}
+{% endschema %}

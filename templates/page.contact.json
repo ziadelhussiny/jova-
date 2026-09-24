@@ -1,145 +1,46 @@
-/*
- * ------------------------------------------------------------
- * IMPORTANT: The contents of this file are auto-generated.
- *
- * This file may be updated by the Shopify admin theme editor
- * or related systems. Please exercise caution as any changes
- * made to this file may be overwritten.
- * ------------------------------------------------------------
- */{
+{
   "sections": {
-    "main": {
-      "type": "main-page",
+    "contact_hero": { "type": "jovaa-hero", "settings": { "eyebrow": "نحن دائمًا هنا لأجلك", "heading": "تواصل معنا", "english_heading": "GET IN TOUCH", "text": "<p>فريق JOVAA جاهز للإجابة عن جميع استفساراتك ومساعدتك في اختيار ما يناسبك.</p>", "button_label": "", "alignment": "start", "height_desktop": 480 } },
+    "contact_hub": {
+      "type": "jovaa-contact-hub",
       "blocks": {
-        "title": {
-          "type": "text",
-          "name": "t:names.title",
-          "settings": {
-            "text": "<h1>{{ closest.page.title }}</h1>",
-            "width": "100%",
-            "max_width": "normal",
-            "alignment": "center",
-            "type_preset": "h2",
-            "font": "var(--font-body--family)",
-            "line_height": "normal",
-            "letter_spacing": "normal",
-            "case": "none",
-            "wrap": "pretty",
-            "background": false,
-            "background_color": "#00000026",
-            "corner_radius": 0,
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {}
-        },
-        "content": {
-          "type": "text",
-          "name": "t:names.content",
-          "settings": {
-            "text": "{{ closest.page.content }}",
-            "width": "100%",
-            "max_width": "narrow",
-            "alignment": "center",
-            "type_preset": "rte",
-            "font": "var(--font-body--family)",
-            "line_height": "normal",
-            "letter_spacing": "normal",
-            "case": "none",
-            "wrap": "pretty",
-            "background": false,
-            "background_color": "#00000026",
-            "corner_radius": 0,
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {}
-        }
+        "phone": { "type": "contact_method", "settings": { "icon": "phone", "heading": "اتصل بنا", "value": "+20 10 1234 5678", "note": "من 10 صباحًا إلى 10 مساءً" } },
+        "whatsapp": { "type": "contact_method", "settings": { "icon": "message", "heading": "واتساب", "value": "+20 10 1234 5678", "note": "رد سريع خلال ساعات العمل" } },
+        "email": { "type": "contact_method", "settings": { "icon": "mail", "heading": "البريد الإلكتروني", "value": "support@jovaa.com", "note": "نرد خلال 24 ساعة" } },
+        "hours": { "type": "contact_method", "settings": { "icon": "clock", "heading": "ساعات خدمة العملاء", "value": "يوميًا من 10 ص إلى 10 م", "note": "بتوقيت القاهرة" } }
       },
-      "block_order": [
-        "title",
-        "content"
-      ],
-      "settings": {
-        "content_direction": "column",
-        "gap": 32,
-        "background_color": "{{ settings.color_palette.background }}",
-        "padding-block-start": 40,
-        "padding-block-end": 0
-      }
+      "block_order": ["phone", "whatsapp", "email", "hours"],
+      "settings": { "anchor_id": "contact-form", "eyebrow": "GET IN TOUCH", "heading": "نحن هنا لمساعدتك", "subheading": "CONTACT INFORMATION", "info_heading": "معلومات التواصل", "form_heading": "أرسل لنا رسالة", "name_label": "الاسم الكامل", "email_label": "البريد الإلكتروني", "phone_label": "رقم الهاتف", "topic_label": "نوع الاستفسار", "message_label": "رسالتك", "submit_label": "إرسال الرسالة", "success_message": "شكرًا لتواصلك معنا. سنرد عليك في أقرب وقت.", "error_message": "راجع الحقول التالية ثم حاول مرة أخرى." }
     },
-    "form": {
-      "type": "section",
+    "faq_links": {
+      "type": "jovaa-faq-links",
       "blocks": {
-        "contact_form_UwiCkQ": {
-          "type": "contact-form",
-          "settings": {
-            "width": "custom",
-            "custom_width": 50,
-            "width_mobile": "custom",
-            "custom_width_mobile": 100,
-            "input_style": "default",
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {
-            "submit-button": {
-              "type": "contact-form-submit-button",
-              "static": true,
-              "settings": {
-                "label": "Submit",
-                "style_class": "button",
-                "width": "fit-content",
-                "custom_width": 100,
-                "width_mobile": "fit-content",
-                "custom_width_mobile": 100
-              },
-              "blocks": {}
-            }
-          },
-          "block_order": []
-        }
+        "shipping": { "type": "link", "settings": { "icon": "box", "heading": "الشحن والتوصيل", "text": "معلومات عن التوصيل وجميع المحافظات" } },
+        "authentic": { "type": "link", "settings": { "icon": "badge", "heading": "المنتجات الأصلية", "text": "كيف نضمن أن منتجاتنا أصلية 100%" } },
+        "payment": { "type": "link", "settings": { "icon": "card", "heading": "الدفع والطلبات", "text": "طرق الدفع وتأكيد الطلبات" } },
+        "returns": { "type": "link", "settings": { "icon": "return", "heading": "الإرجاع والاستبدال", "text": "سياسة الإرجاع والاستبدال" } }
       },
-      "block_order": [
-        "contact_form_UwiCkQ"
-      ],
-      "name": "t:names.contact_form",
-      "settings": {
-        "content_direction": "column",
-        "vertical_on_mobile": true,
-        "horizontal_alignment": "flex-start",
-        "vertical_alignment": "center",
-        "align_baseline": false,
-        "horizontal_alignment_flex_direction_column": "center",
-        "vertical_alignment_flex_direction_column": "center",
-        "gap": 32,
-        "section_width": "page-width",
-        "section_height_custom": 50,
-        "background_media": "none",
-        "background_color": "{{ settings.color_palette.background }}",
-        "video_position": "cover",
-        "background_image_position": "cover",
-        "border": "none",
-        "border_width": 1,
-        "border_opacity": 100,
-        "border_radius": 0,
-        "toggle_overlay": false,
-        "overlay_color": "#00000026",
-        "overlay_style": "solid",
-        "gradient_direction": "to top",
-        "padding-block-start": 32,
-        "padding-block-end": 84
-      }
+      "block_order": ["shipping", "authentic", "payment", "returns"],
+      "settings": { "heading": "الأسئلة الشائعة", "subheading": "FAQ QUICK LINKS", "columns": 4 }
+    },
+    "egypt_delivery": { "type": "jovaa-delivery-banner", "settings": { "eyebrow": "LUXURY DELIVERS EVERYWHERE", "heading": "في كل أنحاء مصر", "english_heading": "ACROSS ALL EGYPT", "text": "<p>نصل إليك أينما كنت في مصر، مع شحن سريع وآمن إلى جميع المحافظات.</p>", "button_label": "تسوق الآن", "button_link": "shopify://collections/all" } },
+    "contact_banners": {
+      "type": "jovaa-banner-grid",
+      "blocks": {
+        "one": { "type": "banner", "settings": { "eyebrow": "A SCENT, A BETTER YOU", "heading": "لأن كل قصة تبدأ برائحة مميزة", "button_label": "تسوق الآن", "link": "shopify://collections/all" } },
+        "two": { "type": "banner", "settings": { "eyebrow": "WE'RE HERE FOR YOU", "heading": "دعم سريع، تجربة استثنائية", "button_label": "تواصل معنا", "link": "#contact-form" } }
+      },
+      "block_order": ["one", "two"],
+      "settings": { "accessible_title": "اكتشف JOVAA", "columns": 2 }
+    },
+    "contact_benefits": {
+      "type": "jovaa-benefits",
+      "blocks": {
+        "one": { "type": "benefit", "settings": { "icon": "truck", "heading": "توصيل سريع", "text": "لجميع أنحاء مصر" } }, "two": { "type": "benefit", "settings": { "icon": "badge", "heading": "منتجات أصلية", "text": "مضمونة 100%" } }, "three": { "type": "benefit", "settings": { "icon": "card", "heading": "دفع آمن", "text": "وسائل دفع متعددة" } }, "four": { "type": "benefit", "settings": { "icon": "clock", "heading": "تواصل معنا", "text": "دعم يومي" } }
+      },
+      "block_order": ["one", "two", "three", "four"],
+      "settings": { "accessible_title": "مميزات الخدمة", "columns": 4 }
     }
   },
-  "order": [
-    "main",
-    "form"
-  ]
+  "order": ["contact_hero", "contact_hub", "faq_links", "egypt_delivery", "contact_banners", "contact_benefits"]
 }

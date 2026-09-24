@@ -1,0 +1,119 @@
+{%- assign heading_id = 'JovaaContact-' | append: section.id -%}
+<section{% if section.settings.anchor_id != blank %} id="{{ section.settings.anchor_id | handleize }}"{% endif %} class="jv-section jv-section--sand" aria-labelledby="{{ heading_id }}">
+  <div class="jv-shell">
+    {% render 'jovaa-heading', id: heading_id, eyebrow: section.settings.eyebrow, heading: section.settings.heading, subheading: section.settings.subheading, text: section.settings.intro %}
+    <div class="jv-grid jv-contact">
+      <aside class="jv-contact__panel" aria-labelledby="JovaaContactInfo-{{ section.id }}" data-jovaa-reveal>
+        <h2 id="JovaaContactInfo-{{ section.id }}">{{ section.settings.info_heading | escape }}</h2>
+        <div class="jv-contact__list">
+          {%- for block in section.blocks -%}
+            {%- if block.settings.link != blank -%}<a class="jv-contact__item" href="{{ block.settings.link }}" {{ block.shopify_attributes }}>{%- else -%}<div class="jv-contact__item" {{ block.shopify_attributes }}>{%- endif -%}
+              {% render 'jovaa-icon', icon: block.settings.icon %}
+              <div>
+                <strong>{{ block.settings.heading | escape }}</strong>
+                {%- if block.settings.value != blank -%}<div>{{ block.settings.value | escape }}</div>{%- endif -%}
+                {%- if block.settings.note != blank -%}<span>{{ block.settings.note | escape }}</span>{%- endif -%}
+              </div>
+            {%- if block.settings.link != blank -%}</a>{%- else -%}</div>{%- endif -%}
+          {%- endfor -%}
+        </div>
+      </aside>
+
+      <div class="jv-contact__panel" data-jovaa-reveal>
+        <h2>{{ section.settings.form_heading | escape }}</h2>
+        {%- form 'contact', class: 'jv-form' -%}
+          {%- if form.posted_successfully? -%}
+            <p class="jv-form-status jv-form-status--success" role="status" tabindex="-1">{{ section.settings.success_message | escape }}</p>
+          {%- endif -%}
+          {%- if form.errors -%}
+            <div class="jv-form-status jv-form-status--error" role="alert" tabindex="-1">
+              <p>{{ section.settings.error_message | escape }}</p>
+              {{ form.errors | default_errors }}
+            </div>
+          {%- endif -%}
+
+          <div class="jv-field">
+            <label for="ContactName-{{ section.id }}">{{ section.settings.name_label | escape }} <span aria-hidden="true">*</span></label>
+            <input id="ContactName-{{ section.id }}" name="contact[name]" type="text" autocomplete="name" value="{{ form.name | escape }}" required>
+          </div>
+          <div class="jv-field">
+            <label for="ContactEmail-{{ section.id }}">{{ section.settings.email_label | escape }} <span aria-hidden="true">*</span></label>
+            <input id="ContactEmail-{{ section.id }}" name="contact[email]" type="email" autocomplete="email" autocapitalize="off" spellcheck="false" value="{{ form.email | escape }}" required>
+          </div>
+          <div class="jv-field">
+            <label for="ContactPhone-{{ section.id }}">{{ section.settings.phone_label | escape }}</label>
+            <input id="ContactPhone-{{ section.id }}" name="contact[phone]" type="tel" autocomplete="tel" inputmode="tel" value="{{ form.phone | escape }}">
+          </div>
+          <div class="jv-field">
+            <label for="ContactTopic-{{ section.id }}">{{ section.settings.topic_label | escape }}</label>
+            <select id="ContactTopic-{{ section.id }}" name="contact[topic]">
+              <option value="استفسار عام">استفسار عام</option>
+              <option value="طلب قائم">طلب قائم</option>
+              <option value="منتج">استفسار عن منتج</option>
+              <option value="استبدال أو استرجاع">استبدال أو استرجاع</option>
+            </select>
+          </div>
+          <div class="jv-field jv-field--full">
+            <label for="ContactMessage-{{ section.id }}">{{ section.settings.message_label | escape }} <span aria-hidden="true">*</span></label>
+            <textarea id="ContactMessage-{{ section.id }}" name="contact[body]" required>{{ form.body | escape }}</textarea>
+          </div>
+          <div class="jv-field jv-field--full">
+            <button class="jv-button" type="submit">{{ section.settings.submit_label | escape }} <span aria-hidden="true">←</span></button>
+          </div>
+        {%- endform -%}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "JOVAA • Contact",
+  "tag": "section",
+  "class": "jovaa-section",
+  "max_blocks": 6,
+  "settings": [
+    { "type": "text", "id": "anchor_id", "label": "معرّف الرابط الداخلي" },
+    { "type": "text", "id": "eyebrow", "label": "النص الصغير", "default": "GET IN TOUCH" },
+    { "type": "text", "id": "heading", "label": "العنوان", "default": "تواصل معنا" },
+    { "type": "text", "id": "subheading", "label": "العنوان الإنجليزي", "default": "WE'RE ALWAYS HERE" },
+    { "type": "richtext", "id": "intro", "label": "المقدمة", "default": "<p>فريق JOVAA جاهز للإجابة عن استفساراتك ومساعدتك في اختيار ما يناسبك.</p>" },
+    { "type": "text", "id": "info_heading", "label": "عنوان معلومات التواصل", "default": "معلومات التواصل" },
+    { "type": "text", "id": "form_heading", "label": "عنوان النموذج", "default": "أرسل لنا رسالة" },
+    { "type": "text", "id": "name_label", "label": "حقل الاسم", "default": "الاسم الكامل" },
+    { "type": "text", "id": "email_label", "label": "حقل البريد", "default": "البريد الإلكتروني" },
+    { "type": "text", "id": "phone_label", "label": "حقل الهاتف", "default": "رقم الهاتف" },
+    { "type": "text", "id": "topic_label", "label": "حقل نوع الاستفسار", "default": "نوع الاستفسار" },
+    { "type": "text", "id": "message_label", "label": "حقل الرسالة", "default": "رسالتك" },
+    { "type": "text", "id": "submit_label", "label": "زر الإرسال", "default": "إرسال الرسالة" },
+    { "type": "text", "id": "success_message", "label": "رسالة النجاح", "default": "شكرًا لتواصلك معنا. سنرد عليك في أقرب وقت." },
+    { "type": "text", "id": "error_message", "label": "رسالة الخطأ", "default": "راجع الحقول التالية ثم حاول مرة أخرى." }
+  ],
+  "blocks": [
+    {
+      "type": "contact_method", "name": "وسيلة تواصل",
+      "settings": [
+        {
+          "type": "select", "id": "icon", "label": "الأيقونة", "default": "phone",
+          "options": [{ "value": "phone", "label": "هاتف" }, { "value": "message", "label": "واتساب" }, { "value": "mail", "label": "بريد" }, { "value": "clock", "label": "مواعيد" }]
+        },
+        { "type": "text", "id": "heading", "label": "العنوان", "default": "اتصل بنا" },
+        { "type": "text", "id": "value", "label": "القيمة", "default": "+20 10 1234 5678" },
+        { "type": "text", "id": "note", "label": "ملاحظة", "default": "من 10 صباحًا إلى 10 مساءً" },
+        { "type": "url", "id": "link", "label": "الرابط" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "JOVAA • Contact",
+      "blocks": [
+        { "type": "contact_method" },
+        { "type": "contact_method", "settings": { "icon": "message", "heading": "واتساب", "note": "رد سريع خلال ساعات العمل" } },
+        { "type": "contact_method", "settings": { "icon": "mail", "heading": "البريد الإلكتروني", "value": "support@jovaa.com", "note": "نرد خلال 24 ساعة" } },
+        { "type": "contact_method", "settings": { "icon": "clock", "heading": "ساعات خدمة العملاء", "value": "يوميًا من 10 ص إلى 10 م", "note": "بتوقيت القاهرة" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

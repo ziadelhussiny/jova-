@@ -1,0 +1,54 @@
+{
+  "sections": {
+    "about_hero": { "type": "jovaa-hero", "settings": { "eyebrow": "من نحن", "heading": "أكثر من مجرد عطور... نمط حياة", "english_heading": "MORE THAN A FRAGRANCE — A LIFESTYLE", "button_label": "اكتشف قصتنا", "button_link": "#our-story", "alignment": "start", "height_desktop": 560 } },
+    "our_story": { "type": "jovaa-story", "settings": { "anchor_id": "our-story", "image_position": "start", "eyebrow": "من قلب مصر إلى عشاق الفخامة", "heading": "قصتنا", "english_heading": "OUR STORY", "text": "<p>تأسست JOVAA في مصر من شغف حقيقي بالعطور الفاخرة والحقائب الاستثنائية. نؤمن أن كل شخص يستحق أن يعيش تجربة الفخامة الأصلية؛ لذلك جمعنا لك أفضل الماركات العالمية في مكان واحد.</p>", "button_label": "معرفة المزيد عن رؤيتنا", "button_link": "#philosophy" } },
+    "authenticity": { "type": "jovaa-story", "settings": { "image_position": "end", "eyebrow": "الأصالة مصدر ثقتنا", "heading": "الأصالة والجودة", "english_heading": "AUTHENTICITY & SOURCING", "text": "<p>نحرص في JOVAA على توفير منتجات أصلية 100% من الماركات العالمية المعتمدة. كل منتج لدينا يخضع لمراجعة دقيقة لضمان وصوله إليك بنفس الجودة التي تستحقها.</p>" } },
+    "about_benefits": {
+      "type": "jovaa-benefits",
+      "blocks": {
+        "one": { "type": "benefit", "settings": { "icon": "shield", "heading": "منتجات أصلية 100%", "text": "جودة مضمونة" } },
+        "two": { "type": "benefit", "settings": { "icon": "globe", "heading": "مصادر موثوقة عالميًا", "text": "شراكات رسمية ومعتمدة" } },
+        "three": { "type": "benefit", "settings": { "icon": "truck", "heading": "توصيل لجميع أنحاء مصر", "text": "سريع وآمن حتى باب منزلك" } },
+        "four": { "type": "benefit", "settings": { "icon": "diamond", "heading": "تجربة فاخرة للعملاء", "text": "لأنك تستحق الأفضل دائمًا" } }
+      },
+      "block_order": ["one", "two", "three", "four"],
+      "settings": { "accessible_title": "قيم JOVAA", "columns": 4 }
+    },
+    "philosophy": {
+      "type": "jovaa-banner-grid",
+      "blocks": { "philosophy_banner": { "type": "banner", "settings": { "eyebrow": "OUR PHILOSOPHY", "heading": "نؤمن أن الجمال الحقيقي يكمن في التفاصيل", "text": "<p>وأن الفخامة يجب أن تكون قريبة من الجميع.</p>" } } },
+      "block_order": ["philosophy_banner"],
+      "settings": { "anchor_id": "philosophy", "accessible_title": "فلسفتنا", "columns": 1 }
+    },
+    "journey": {
+      "type": "jovaa-timeline",
+      "blocks": {
+        "year_1": { "type": "milestone", "settings": { "year": "2023", "heading": "بداية الرحلة", "text": "انطلاق JOVAA في مصر", "icon": "store" } },
+        "year_2": { "type": "milestone", "settings": { "year": "2024", "heading": "آلاف العملاء", "text": "بناء مجتمع من محبي الفخامة", "icon": "people" } },
+        "year_3": { "type": "milestone", "settings": { "year": "2024–2025", "heading": "توسع وتنوع", "text": "المزيد من الماركات العالمية", "icon": "box" } },
+        "year_4": { "type": "milestone", "settings": { "year": "المستقبل", "heading": "أكثر إشراقًا", "text": "وجهتك الأولى للفخامة", "icon": "diamond" } }
+      },
+      "block_order": ["year_1", "year_2", "year_3", "year_4"],
+      "settings": { "heading": "رحلتنا في أرقام", "subheading": "OUR JOURNEY", "columns": 4 }
+    },
+    "about_reviews": {
+      "type": "jovaa-testimonials",
+      "blocks": {
+        "review_1": { "type": "testimonial", "settings": { "rating": 5, "quote": "تجربة راقية ومنتجات أصلية 100%، والتوصيل أسرع مما توقعت.", "name": "Sarah M.", "location": "Cairo" } },
+        "review_2": { "type": "testimonial", "settings": { "rating": 5, "quote": "أفضل متجر للعطور والحقائب في مصر. خدمة راقية ومنتجات مضمونة.", "name": "Ahmed K.", "location": "Giza" } },
+        "review_3": { "type": "testimonial", "settings": { "rating": 5, "quote": "كل التفاصيل من الموقع لتغليف المنتج تدل على الفخامة.", "name": "Nada H.", "location": "Alexandria" } }
+      },
+      "block_order": ["review_1", "review_2", "review_3"],
+      "settings": { "heading": "ماذا يقول عملاؤنا", "subheading": "CUSTOMER LOVE" }
+    },
+    "about_social": {
+      "type": "jovaa-social-gallery",
+      "blocks": {
+        "one": { "type": "image", "settings": { "label": "منشور JOVAA الأول" } }, "two": { "type": "image", "settings": { "label": "منشور JOVAA الثاني" } }, "three": { "type": "image", "settings": { "label": "منشور JOVAA الثالث" } }, "four": { "type": "image", "settings": { "label": "منشور JOVAA الرابع" } }, "five": { "type": "image", "settings": { "label": "منشور JOVAA الخامس" } }, "six": { "type": "image", "settings": { "label": "منشور JOVAA السادس" } }
+      },
+      "block_order": ["one", "two", "three", "four", "five", "six"],
+      "settings": { "heading": "تابعونا على إنستجرام", "handle": "@jovaa.perfumes", "columns": 6 }
+    }
+  },
+  "order": ["about_hero", "our_story", "authenticity", "about_benefits", "philosophy", "journey", "about_reviews", "about_social"]
+}

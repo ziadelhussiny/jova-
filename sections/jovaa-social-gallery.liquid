@@ -1,0 +1,54 @@
+{%- assign heading_id = 'JovaaSocial-' | append: section.id -%}
+<section class="jv-section jv-section--compact" aria-labelledby="{{ heading_id }}">
+  <div class="jv-shell">
+    {% render 'jovaa-heading', id: heading_id, eyebrow: section.settings.eyebrow, heading: section.settings.heading, subheading: section.settings.handle %}
+    <div class="jv-grid jv-social" style="--jv-columns: {{ section.settings.columns }};" data-jovaa-reveal>
+      {%- for block in section.blocks -%}
+        {%- assign social_alt = block.settings.image.alt | default: block.settings.label -%}
+        <a class="jv-social__item" href="{{ block.settings.link | default: section.settings.profile_link }}" {{ block.shopify_attributes }} aria-label="{{ block.settings.label | escape }}">
+          {%- if block.settings.image != blank -%}
+            {{ block.settings.image
+              | image_url: width: 700
+              | image_tag:
+                widths: '180, 260, 360, 520, 700',
+                sizes: '(max-width: 749px) 33vw, 17vw',
+                loading: 'lazy',
+                alt: social_alt
+            }}
+          {%- else -%}
+            <div class="jv-media-placeholder">{{ 'image' | placeholder_svg_tag }}</div>
+          {%- endif -%}
+        </a>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "JOVAA • Social",
+  "tag": "section",
+  "class": "jovaa-section",
+  "max_blocks": 12,
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "النص الصغير" },
+    { "type": "text", "id": "heading", "label": "العنوان", "default": "تابعونا على إنستجرام" },
+    { "type": "text", "id": "handle", "label": "اسم الحساب", "default": "@jovaa.perfumes" },
+    { "type": "url", "id": "profile_link", "label": "رابط الحساب" },
+    { "type": "range", "id": "columns", "label": "عدد الأعمدة", "min": 3, "max": 8, "step": 1, "default": 6 }
+  ],
+  "blocks": [
+    {
+      "type": "image", "name": "صورة",
+      "settings": [
+        { "type": "image_picker", "id": "image", "label": "الصورة" },
+        { "type": "text", "id": "label", "label": "وصف الرابط", "default": "شاهد المنشور على إنستجرام" },
+        { "type": "url", "id": "link", "label": "رابط المنشور" }
+      ]
+    }
+  ],
+  "presets": [
+    { "name": "JOVAA • Social", "blocks": [{ "type": "image" }, { "type": "image" }, { "type": "image" }, { "type": "image" }, { "type": "image" }, { "type": "image" }] }
+  ]
+}
+{% endschema %}

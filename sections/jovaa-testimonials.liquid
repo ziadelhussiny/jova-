@@ -1,0 +1,58 @@
+{%- assign heading_id = 'JovaaTestimonials-' | append: section.id -%}
+<section class="jv-section jv-section--sand" aria-labelledby="{{ heading_id }}">
+  <div class="jv-shell">
+    {% render 'jovaa-heading', id: heading_id, eyebrow: section.settings.eyebrow, heading: section.settings.heading, subheading: section.settings.subheading %}
+    <jovaa-scroller class="jv-scroller" data-jovaa-reveal>
+      <div class="jv-scroller__track" data-jovaa-track tabindex="0" aria-label="{{ section.settings.heading | escape }}">
+        {%- for block in section.blocks -%}
+          <article class="jv-testimonial" {{ block.shopify_attributes }}>
+            <div class="jv-testimonial__stars" aria-label="{{ block.settings.rating }} من 5 نجوم">
+              {%- for star in (1..5) -%}<span aria-hidden="true">{% if star <= block.settings.rating %}★{% else %}☆{% endif %}</span>{%- endfor -%}
+            </div>
+            <blockquote>“{{ block.settings.quote | escape }}”</blockquote>
+            <cite>{{ block.settings.name | escape }}{% if block.settings.location != blank %} — {{ block.settings.location | escape }}{% endif %}</cite>
+          </article>
+        {%- endfor -%}
+      </div>
+      <div class="jv-scroller__controls">
+        <button class="jv-arrow" type="button" data-jovaa-previous aria-label="السابق"><span aria-hidden="true">→</span></button>
+        <button class="jv-arrow" type="button" data-jovaa-next aria-label="التالي"><span aria-hidden="true">←</span></button>
+      </div>
+    </jovaa-scroller>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "JOVAA • Reviews",
+  "tag": "section",
+  "class": "jovaa-section",
+  "max_blocks": 10,
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "النص الصغير" },
+    { "type": "text", "id": "heading", "label": "العنوان", "default": "آراء عملائنا" },
+    { "type": "text", "id": "subheading", "label": "العنوان الإنجليزي", "default": "CUSTOMER LOVE" }
+  ],
+  "blocks": [
+    {
+      "type": "testimonial", "name": "رأي عميل",
+      "settings": [
+        { "type": "range", "id": "rating", "label": "التقييم", "min": 1, "max": 5, "step": 1, "default": 5 },
+        { "type": "textarea", "id": "quote", "label": "الرأي", "default": "العطر أصلي والتغليف راقٍ جدًا، والتوصيل كان سريعًا." },
+        { "type": "text", "id": "name", "label": "الاسم", "default": "Nadine M." },
+        { "type": "text", "id": "location", "label": "المكان", "default": "Cairo" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "JOVAA • Reviews",
+      "blocks": [
+        { "type": "testimonial" },
+        { "type": "testimonial", "settings": { "quote": "من أفضل المتاجر لشراء العطور الأصلية. خدمة ممتازة.", "name": "Ahmed K." } },
+        { "type": "testimonial", "settings": { "quote": "التغليف فاخر والمنتج وصل بحالة ممتازة. تجربة جميلة جدًا.", "name": "Sara H." } }
+      ]
+    }
+  ]
+}
+{% endschema %}

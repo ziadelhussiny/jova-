@@ -1,0 +1,46 @@
+{%- assign delivery_alt = section.settings.image.alt | default: section.settings.heading -%}
+<section class="jv-delivery" aria-labelledby="JovaaDelivery-{{ section.id }}" data-jovaa-reveal>
+  <div class="jv-delivery__media">
+    {%- if section.settings.image != blank -%}
+      {{ section.settings.image
+        | image_url: width: 2200
+        | image_tag:
+          widths: '750, 1100, 1500, 1920, 2200',
+          sizes: '100vw',
+          loading: 'lazy',
+          alt: delivery_alt
+      }}
+    {%- else -%}
+      <div class="jv-media-placeholder">{{ 'lifestyle-1' | placeholder_svg_tag }}</div>
+    {%- endif -%}
+  </div>
+  <div class="jv-delivery__content">
+    <div class="jv-delivery__content-inner">
+      {%- if section.settings.eyebrow != blank -%}<span class="jv-hero__eyebrow">{{ section.settings.eyebrow | escape }}</span>{%- endif -%}
+      <h2 id="JovaaDelivery-{{ section.id }}">{{ section.settings.heading | escape }}</h2>
+      {%- if section.settings.english_heading != blank -%}<span class="jv-hero__english" lang="en">{{ section.settings.english_heading | escape }}</span>{%- endif -%}
+      {%- if section.settings.text != blank -%}<div class="rte">{{ section.settings.text }}</div>{%- endif -%}
+      {%- if section.settings.button_label != blank -%}
+        <a class="jv-button jv-button--light" href="{{ section.settings.button_link | default: routes.all_products_collection_url }}">{{ section.settings.button_label | escape }}</a>
+      {%- endif -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "JOVAA • Egypt delivery",
+  "tag": "section",
+  "class": "jovaa-section",
+  "settings": [
+    { "type": "image_picker", "id": "image", "label": "الصورة" },
+    { "type": "text", "id": "eyebrow", "label": "النص الصغير", "default": "LUXURY DELIVERS EVERYWHERE" },
+    { "type": "text", "id": "heading", "label": "العنوان", "default": "في كل أنحاء مصر" },
+    { "type": "text", "id": "english_heading", "label": "العنوان الإنجليزي", "default": "ACROSS ALL EGYPT" },
+    { "type": "richtext", "id": "text", "label": "النص", "default": "<p>نصل إليك أينما كنت في مصر، مع شحن سريع وآمن إلى جميع المحافظات.</p>" },
+    { "type": "text", "id": "button_label", "label": "نص الزر", "default": "تسوق الآن" },
+    { "type": "url", "id": "button_link", "label": "رابط الزر" }
+  ],
+  "presets": [{ "name": "JOVAA • Egypt delivery" }]
+}
+{% endschema %}
