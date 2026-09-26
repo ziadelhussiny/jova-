@@ -10,19 +10,28 @@
       {%- for block in section.blocks -%}
         {%- assign category_alt = block.settings.image.alt | default: block.settings.heading -%}
         {%- assign fallback_asset = 'jovaa-perfume.webp' -%}
-        {%- if block.settings.fallback_image == 'handbag' -%}{%- assign fallback_asset = 'jovaa-handbag.webp' -%}{%- endif -%}
+        {%- assign fallback_mobile_asset = 'jovaa-perfume-mobile.webp' -%}
+        {%- if block.settings.fallback_image == 'handbag' -%}
+          {%- assign fallback_asset = 'jovaa-handbag.webp' -%}
+          {%- assign fallback_mobile_asset = 'jovaa-handbag-mobile.webp' -%}
+        {%- endif -%}
         <article class="jv-category" {{ block.shopify_attributes }} data-jovaa-reveal>
           {%- if block.settings.image != blank -%}
-            {{ block.settings.image
-              | image_url: width: 1400
-              | image_tag:
-                widths: '400, 600, 900, 1200, 1400',
-                sizes: '(max-width: 749px) 100vw, 50vw',
-                loading: 'lazy',
-                alt: category_alt
-            }}
+            <picture>
+              {%- if block.settings.mobile_image != blank -%}
+                <source media="(max-width: 749px)" srcset="{{ block.settings.mobile_image | image_url: width: 480 }} 480w, {{ block.settings.mobile_image | image_url: width: 750 }} 750w" sizes="50vw">
+              {%- endif -%}
+              {{ block.settings.image
+                | image_url: width: 1400
+                | image_tag:
+                  widths: '400, 600, 900, 1200, 1400',
+                  sizes: '(max-width: 749px) 50vw, 50vw',
+                  loading: 'lazy',
+                  alt: category_alt
+              }}
+            </picture>
           {%- else -%}
-            {% render 'jovaa-fallback-image', image: fallback_asset, alt: category_alt, sizes: '(max-width: 749px) 100vw, 50vw' %}
+            {% render 'jovaa-fallback-image', image: fallback_asset, mobile_image: fallback_mobile_asset, alt: category_alt, sizes: '(max-width: 749px) 50vw, 50vw' %}
           {%- endif -%}
           <div class="jv-category__content">
             <h3>{{ block.settings.heading | escape }}</h3>
@@ -54,7 +63,8 @@
     {
       "type": "category", "name": "Category",
       "settings": [
-        { "type": "image_picker", "id": "image", "label": "Image" },
+        { "type": "image_picker", "id": "image", "label": "Desktop image" },
+        { "type": "image_picker", "id": "mobile_image", "label": "Mobile image" },
         {
           "type": "select", "id": "fallback_image", "label": "Built-in fallback image", "default": "perfume",
           "options": [{ "value": "perfume", "label": "Perfume" }, { "value": "handbag", "label": "Handbag" }]

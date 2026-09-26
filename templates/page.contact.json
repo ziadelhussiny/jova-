@@ -1,6 +1,6 @@
 {
   "sections": {
-    "contact_hero": { "type": "jovaa-hero", "settings": { "fallback_image": "home", "eyebrow": "WE ARE ALWAYS HERE FOR YOU", "heading": "Contact us", "english_heading": "GET IN TOUCH", "text": "<p>The JOVAA team is ready to answer your questions and help you choose what feels right for you.</p>", "button_label": "", "alignment": "start", "height_desktop": 480 } },
+    "contact_hero": { "type": "jovaa-hero", "settings": { "fallback_image": "home", "eyebrow": "WE ARE ALWAYS HERE FOR YOU", "heading": "Contact us", "english_heading": "GET IN TOUCH", "text": "<p>The JOVAA team is ready to answer your questions and help you choose what feels right for you.</p>", "button_label": "", "alignment": "start", "height_desktop": 460 } },
     "contact_hub": {
       "type": "jovaa-contact-hub",
       "blocks": {
@@ -23,7 +23,7 @@
       "block_order": ["shipping", "authentic", "payment", "returns"],
       "settings": { "heading": "Frequently asked questions", "subheading": "FAQ QUICK LINKS", "columns": 4 }
     },
-    "egypt_delivery": { "type": "jovaa-delivery-banner", "settings": { "eyebrow": "LUXURY DELIVERS EVERYWHERE", "heading": "Across all Egypt", "english_heading": "ACROSS ALL EGYPT", "text": "<p>Wherever you are in Egypt, we deliver quickly and securely to your door.</p>", "button_label": "Shop now", "button_link": "shopify://collections/all" } },
+    "egypt_delivery": { "type": "jovaa-delivery-banner", "settings": { "layout": "split", "eyebrow": "LUXURY DELIVERS EVERYWHERE", "heading": "Across all Egypt", "english_heading": "ACROSS ALL EGYPT", "text": "<p>Wherever you are in Egypt, we deliver quickly and securely to your door.</p>", "button_label": "Shop now", "button_link": "shopify://collections/all" } },
     "contact_banners": {
       "type": "jovaa-banner-grid",
       "blocks": {

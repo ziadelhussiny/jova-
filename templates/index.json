@@ -1,6 +1,6 @@
 {
   "sections": {
-    "jovaa_hero": { "type": "jovaa-hero", "settings": { "fallback_image": "home", "eyebrow": "SIGNATURE MOMENTS", "heading": "Luxury in every detail", "english_heading": "MORE THAN A FRAGRANCE — A LIFESTYLE", "button_label": "Shop now", "button_link": "shopify://collections/all", "alignment": "start", "height_desktop": 620 } },
+    "jovaa_hero": { "type": "jovaa-hero", "settings": { "fallback_image": "home", "eyebrow": "SIGNATURE MOMENTS", "heading": "Luxury in every detail", "english_heading": "MORE THAN A FRAGRANCE — A LIFESTYLE", "button_label": "Shop now", "button_link": "shopify://collections/all", "alignment": "start", "height_desktop": 520 } },
     "jovaa_categories": {
       "type": "jovaa-category-grid",
       "blocks": {

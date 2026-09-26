@@ -1,8 +1,8 @@
 {
   "sections": {
-    "about_hero": { "type": "jovaa-hero", "settings": { "fallback_image": "home", "eyebrow": "About us", "heading": "More than fragrance. A way of life.", "english_heading": "MORE THAN A FRAGRANCE — A LIFESTYLE", "button_label": "Discover our story", "button_link": "#our-story", "alignment": "start", "height_desktop": 560 } },
+    "about_hero": { "type": "jovaa-hero", "settings": { "fallback_image": "about", "eyebrow": "About us", "heading": "More than fragrance. A way of life.", "english_heading": "MORE THAN A FRAGRANCE — A LIFESTYLE", "button_label": "Discover our story", "button_link": "#our-story", "alignment": "start", "height_desktop": 520 } },
     "our_story": { "type": "jovaa-story", "settings": { "fallback_image": "cairo", "anchor_id": "our-story", "image_position": "start", "eyebrow": "Born in Egypt, made for lovers of luxury", "heading": "Our story", "english_heading": "OUR STORY", "text": "<p>JOVAA was founded in Egypt from a genuine passion for fine fragrance and exceptional handbags. We believe everyone deserves an authentic luxury experience, so we bring a considered world of style together in one place.</p>", "button_label": "Discover our vision", "button_link": "#philosophy" } },
-    "authenticity": { "type": "jovaa-story", "settings": { "fallback_image": "perfume", "image_position": "end", "eyebrow": "AUTHENTICITY IS OUR PROMISE", "heading": "Authenticity and sourcing", "english_heading": "AUTHENTICITY & SOURCING", "text": "<p>We carefully source authentic products from trusted global brands. Every item is reviewed so it reaches you with the quality, finish, and confidence you expect.</p>" } },
+    "authenticity": { "type": "jovaa-story", "settings": { "fallback_image": "authenticity", "image_position": "end", "eyebrow": "AUTHENTICITY IS OUR PROMISE", "heading": "Authenticity and sourcing", "english_heading": "AUTHENTICITY & SOURCING", "text": "<p>We carefully source authentic products from trusted global brands. Every item is reviewed so it reaches you with the quality, finish, and confidence you expect.</p>", "hide_on_mobile": true } },
     "about_benefits": {
       "type": "jovaa-benefits",
       "blocks": {
@@ -29,7 +29,7 @@
         "year_4": { "type": "milestone", "settings": { "year": "The future", "heading": "A brighter future", "text": "Your destination for modern luxury", "icon": "diamond" } }
       },
       "block_order": ["year_1", "year_2", "year_3", "year_4"],
-      "settings": { "heading": "Our journey", "subheading": "OUR JOURNEY", "columns": 4 }
+      "settings": { "heading": "Our journey", "subheading": "OUR JOURNEY", "columns": 4, "hide_on_mobile": true }
     },
     "about_reviews": {
       "type": "jovaa-testimonials",

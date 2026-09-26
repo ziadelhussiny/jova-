@@ -7,10 +7,16 @@
     assign hero_priority = 'high'
   endif
   assign fallback_asset = 'jovaa-home-hero.webp'
+  assign fallback_mobile_asset = 'jovaa-home-hero-mobile.webp'
   if section.settings.fallback_image == 'editorial'
     assign fallback_asset = 'jovaa-editorial.webp'
+    assign fallback_mobile_asset = 'jovaa-editorial-mobile.webp'
   elsif section.settings.fallback_image == 'cairo'
     assign fallback_asset = 'jovaa-cairo.webp'
+    assign fallback_mobile_asset = 'jovaa-cairo-mobile.webp'
+  elsif section.settings.fallback_image == 'about'
+    assign fallback_asset = 'jovaa-about-hero.webp'
+    assign fallback_mobile_asset = 'jovaa-about-hero-mobile.webp'
   endif
 -%}
 
@@ -44,7 +50,7 @@
         }}
       </picture>
     {%- else -%}
-      {% render 'jovaa-fallback-image', image: fallback_asset, alt: section.settings.heading, sizes: '100vw', loading: hero_loading, fetchpriority: hero_priority %}
+      {% render 'jovaa-fallback-image', image: fallback_asset, mobile_image: fallback_mobile_asset, alt: section.settings.heading, sizes: '100vw', loading: hero_loading, fetchpriority: hero_priority %}
     {%- endif -%}
   </div>
 
@@ -76,7 +82,8 @@
       "options": [
         { "value": "home", "label": "Perfume and handbag" },
         { "value": "editorial", "label": "Editorial model" },
-        { "value": "cairo", "label": "Cairo panorama" }
+        { "value": "cairo", "label": "Cairo panorama" },
+        { "value": "about", "label": "Black handbag and perfume" }
       ]
     },
     { "type": "text", "id": "eyebrow", "label": "Eyebrow text", "default": "SIGNATURE MOMENTS" },
