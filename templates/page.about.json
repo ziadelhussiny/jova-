@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "about_hero": { "type": "jovaa-hero", "settings": { "fallback_image": "about", "eyebrow": "About us", "heading": "More than fragrance. A way of life.", "english_heading": "MORE THAN A FRAGRANCE — A LIFESTYLE", "button_label": "Discover our story", "button_link": "#our-story", "alignment": "start", "height_desktop": 520 } },
