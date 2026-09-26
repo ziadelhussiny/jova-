@@ -44,14 +44,7 @@
         }}
       </picture>
     {%- else -%}
-      <img
-        src="{{ fallback_asset | asset_url }}"
-        width="1680"
-        height="945"
-        loading="{{ hero_loading }}"
-        fetchpriority="{{ hero_priority }}"
-        alt="{{ section.settings.heading | escape }}"
-      >
+      {% render 'jovaa-fallback-image', image: fallback_asset, alt: section.settings.heading, sizes: '100vw', loading: hero_loading, fetchpriority: hero_priority %}
     {%- endif -%}
   </div>
 

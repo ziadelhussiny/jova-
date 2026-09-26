@@ -11,7 +11,7 @@
           alt: delivery_alt
       }}
     {%- else -%}
-      <img src="{{ 'jovaa-cairo.webp' | asset_url }}" width="2048" height="768" loading="lazy" alt="{{ delivery_alt | escape }}">
+      {% render 'jovaa-fallback-image', image: 'jovaa-cairo.webp', alt: delivery_alt, sizes: '100vw' %}
     {%- endif -%}
   </div>
   <div class="jv-delivery__content">

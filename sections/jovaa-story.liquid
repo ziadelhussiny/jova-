@@ -19,7 +19,7 @@
               alt: story_alt
           }}
         {%- else -%}
-          <img src="{{ fallback_asset | asset_url }}" width="1536" height="1024" loading="lazy" alt="{{ story_alt | escape }}">
+          {% render 'jovaa-fallback-image', image: fallback_asset, alt: story_alt, sizes: '(max-width: 749px) 100vw, 50vw' %}
         {%- endif -%}
       </div>
       <div class="jv-story__content">

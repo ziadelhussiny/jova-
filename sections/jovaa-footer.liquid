@@ -1,0 +1,50 @@
+<footer class="jv-footer" aria-label="Site footer">
+  <div class="jv-shell jv-footer__main">
+    <div class="jv-footer__brand">
+      <a class="jv-footer__logo" href="{{ routes.root_url }}" aria-label="{{ shop.name | escape }} home">JOVAA</a>
+      {% if section.settings.tagline != blank %}
+        <p>{{ section.settings.tagline | escape }}</p>
+      {% endif %}
+    </div>
+
+    {% if section.settings.menu != blank %}
+      <nav class="jv-footer__nav" aria-label="Footer navigation">
+        {% for link in section.settings.menu.links %}
+          <a href="{{ link.url }}">{{ link.title | escape }}</a>
+        {% endfor %}
+      </nav>
+    {% endif %}
+
+    <div class="jv-footer__social" aria-label="Social media links">
+      {% if section.settings.instagram_url != blank %}<a href="{{ section.settings.instagram_url }}" target="_blank" rel="noopener">Instagram</a>{% endif %}
+      {% if section.settings.facebook_url != blank %}<a href="{{ section.settings.facebook_url }}" target="_blank" rel="noopener">Facebook</a>{% endif %}
+      {% if section.settings.tiktok_url != blank %}<a href="{{ section.settings.tiktok_url }}" target="_blank" rel="noopener">TikTok</a>{% endif %}
+      {% if section.settings.youtube_url != blank %}<a href="{{ section.settings.youtube_url }}" target="_blank" rel="noopener">YouTube</a>{% endif %}
+    </div>
+  </div>
+
+  <div class="jv-shell jv-footer__bottom">
+    <p>&copy; {{ 'now' | date: '%Y' }} {{ section.settings.copyright | default: shop.name | escape }}. All rights reserved.</p>
+    {% if section.settings.closing_line != blank %}<p>{{ section.settings.closing_line | escape }}</p>{% endif %}
+  </div>
+</footer>
+
+{% schema %}
+{
+  "name": "JOVAA • Footer",
+  "tag": "section",
+  "class": "jv-footer-section",
+  "enabled_on": { "groups": ["footer"] },
+  "settings": [
+    { "type": "link_list", "id": "menu", "label": "Footer menu", "default": "footer" },
+    { "type": "text", "id": "tagline", "label": "Tagline", "default": "More than a fragrance — a lifestyle" },
+    { "type": "text", "id": "copyright", "label": "Copyright name", "default": "JOVAA" },
+    { "type": "text", "id": "closing_line", "label": "Closing line", "default": "A more beautiful you" },
+    { "type": "url", "id": "instagram_url", "label": "Instagram URL" },
+    { "type": "url", "id": "facebook_url", "label": "Facebook URL" },
+    { "type": "url", "id": "tiktok_url", "label": "TikTok URL" },
+    { "type": "url", "id": "youtube_url", "label": "YouTube URL" }
+  ],
+  "presets": [{ "name": "JOVAA • Footer" }]
+}
+{% endschema %}

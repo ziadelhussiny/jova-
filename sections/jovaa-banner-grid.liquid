@@ -26,7 +26,7 @@
                 alt: banner_alt
             }}
           {%- else -%}
-            <img src="{{ fallback_asset | asset_url }}" width="1536" height="1024" loading="lazy" alt="{{ banner_alt | escape }}">
+            {% render 'jovaa-fallback-image', image: fallback_asset, alt: banner_alt, sizes: '(max-width: 749px) 100vw, 50vw' %}
           {%- endif -%}
           <div class="jv-banner__content">
             {%- if block.settings.eyebrow != blank -%}<span class="jv-hero__eyebrow">{{ block.settings.eyebrow | escape }}</span>{%- endif -%}

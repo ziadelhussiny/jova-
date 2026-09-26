@@ -47,7 +47,7 @@
             {%- assign fallback_title = 'JOVAA Timeless Handbag' -%}
           {%- endif -%}
           <article class="jv-product">
-            <div class="jv-product__media"><img src="{{ fallback_asset | asset_url }}" width="700" height="875" loading="lazy" alt="{{ fallback_title }}"></div>
+            <div class="jv-product__media">{% render 'jovaa-fallback-image', image: fallback_asset, alt: fallback_title, sizes: '(max-width: 749px) 50vw, 20vw' %}</div>
             <h3 class="jv-product__title">{{ fallback_title }}</h3>
             <div class="jv-product__price">From {{ 9500 | money }}</div>
           </article>

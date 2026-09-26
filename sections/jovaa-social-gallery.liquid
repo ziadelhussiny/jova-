@@ -23,7 +23,7 @@
                 alt: social_alt
             }}
           {%- else -%}
-            <img src="{{ fallback_asset | asset_url }}" width="640" height="640" loading="lazy" alt="{{ social_alt | escape }}">
+            {% render 'jovaa-fallback-image', image: fallback_asset, alt: social_alt, sizes: '(max-width: 749px) 33vw, 17vw' %}
           {%- endif -%}
         </a>
       {%- endfor -%}

@@ -22,7 +22,7 @@
                 alt: category_alt
             }}
           {%- else -%}
-            <img src="{{ fallback_asset | asset_url }}" width="1456" height="1092" loading="lazy" alt="{{ category_alt | escape }}">
+            {% render 'jovaa-fallback-image', image: fallback_asset, alt: category_alt, sizes: '(max-width: 749px) 100vw, 50vw' %}
           {%- endif -%}
           <div class="jv-category__content">
             <h3>{{ block.settings.heading | escape }}</h3>

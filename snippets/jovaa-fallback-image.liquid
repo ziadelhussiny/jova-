@@ -1,0 +1,30 @@
+{% liquid
+  assign image_480 = image | replace: '.webp', '-480.webp'
+  assign image_960 = image | replace: '.webp', '-960.webp'
+  assign image_width = 1536
+  assign image_height = 1024
+  case image
+    when 'jovaa-home-hero.webp'
+      assign image_width = 1672
+      assign image_height = 941
+    when 'jovaa-perfume.webp', 'jovaa-handbag.webp'
+      assign image_width = 1448
+      assign image_height = 1086
+    when 'jovaa-cairo.webp'
+      assign image_width = 2048
+      assign image_height = 768
+  endcase
+  assign image_loading = loading | default: 'lazy'
+  assign image_priority = fetchpriority | default: 'auto'
+  assign image_sizes = sizes | default: '100vw'
+%}
+<img
+  src="{{ image | asset_url }}"
+  srcset="{{ image_480 | asset_url }} 480w, {{ image_960 | asset_url }} 960w, {{ image | asset_url }} {{ image_width }}w"
+  sizes="{{ image_sizes }}"
+  width="{{ image_width }}"
+  height="{{ image_height }}"
+  loading="{{ image_loading }}"
+  fetchpriority="{{ image_priority }}"
+  alt="{{ alt | escape }}"
+>
