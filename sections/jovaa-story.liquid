@@ -1,4 +1,10 @@
 {%- assign story_alt = section.settings.image.alt | default: section.settings.heading -%}
+{%- assign fallback_asset = 'jovaa-editorial.webp' -%}
+{%- case section.settings.fallback_image -%}
+  {%- when 'cairo' -%}{%- assign fallback_asset = 'jovaa-cairo.webp' -%}
+  {%- when 'perfume' -%}{%- assign fallback_asset = 'jovaa-perfume.webp' -%}
+  {%- when 'handbag' -%}{%- assign fallback_asset = 'jovaa-handbag.webp' -%}
+{%- endcase -%}
 <section{% if section.settings.anchor_id != blank %} id="{{ section.settings.anchor_id | handleize }}"{% endif %} class="jv-section" aria-labelledby="JovaaStory-{{ section.id }}">
   <div class="jv-shell">
     <div class="jv-grid jv-story{% if section.settings.image_position == 'end' %} jv-story--reverse{% endif %}" data-jovaa-reveal>
@@ -13,7 +19,7 @@
               alt: story_alt
           }}
         {%- else -%}
-          <div class="jv-media-placeholder">{{ 'lifestyle-2' | placeholder_svg_tag }}</div>
+          <img src="{{ fallback_asset | asset_url }}" width="1536" height="1024" loading="lazy" alt="{{ story_alt | escape }}">
         {%- endif -%}
       </div>
       <div class="jv-story__content">
@@ -35,18 +41,25 @@
   "tag": "section",
   "class": "jovaa-section",
   "settings": [
-    { "type": "text", "id": "anchor_id", "label": "معرّف الرابط الداخلي" },
-    { "type": "image_picker", "id": "image", "label": "الصورة" },
+    { "type": "text", "id": "anchor_id", "label": "Anchor ID" },
+    { "type": "image_picker", "id": "image", "label": "Image" },
     {
-      "type": "select", "id": "image_position", "label": "موضع الصورة", "default": "start",
-      "options": [{ "value": "start", "label": "البداية" }, { "value": "end", "label": "النهاية" }]
+      "type": "select", "id": "fallback_image", "label": "Built-in fallback image", "default": "editorial",
+      "options": [
+        { "value": "editorial", "label": "Editorial model" }, { "value": "cairo", "label": "Cairo" },
+        { "value": "perfume", "label": "Perfume" }, { "value": "handbag", "label": "Handbag" }
+      ]
     },
-    { "type": "text", "id": "eyebrow", "label": "النص الصغير", "default": "من نحن" },
-    { "type": "text", "id": "heading", "label": "العنوان", "default": "قصتنا" },
-    { "type": "text", "id": "english_heading", "label": "العنوان الإنجليزي", "default": "OUR STORY" },
-    { "type": "richtext", "id": "text", "label": "النص", "default": "<p>تأسست JOVAA في مصر من شغف حقيقي بالعطور الفاخرة والحقائب الاستثنائية. نؤمن أن كل تفصيلة تصنع لحظة أجمل.</p>" },
-    { "type": "text", "id": "button_label", "label": "نص الزر" },
-    { "type": "url", "id": "button_link", "label": "رابط الزر" }
+    {
+      "type": "select", "id": "image_position", "label": "Image position", "default": "start",
+      "options": [{ "value": "start", "label": "Start" }, { "value": "end", "label": "End" }]
+    },
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow text", "default": "About us" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Our story" },
+    { "type": "text", "id": "english_heading", "label": "English subtitle", "default": "OUR STORY" },
+    { "type": "richtext", "id": "text", "label": "Text", "default": "<p>JOVAA was founded in Egypt from a genuine passion for fine fragrance and exceptional handbags. We believe every detail can create a more beautiful moment.</p>" },
+    { "type": "text", "id": "button_label", "label": "Button label" },
+    { "type": "url", "id": "button_link", "label": "Button link" }
   ],
   "presets": [{ "name": "JOVAA • Story" }]
 }

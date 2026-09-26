@@ -47,10 +47,10 @@
           <div class="jv-field">
             <label for="ContactTopic-{{ section.id }}">{{ section.settings.topic_label | escape }}</label>
             <select id="ContactTopic-{{ section.id }}" name="contact[topic]">
-              <option value="استفسار عام">استفسار عام</option>
-              <option value="طلب قائم">طلب قائم</option>
-              <option value="منتج">استفسار عن منتج</option>
-              <option value="استبدال أو استرجاع">استبدال أو استرجاع</option>
+              <option value="General inquiry">General inquiry</option>
+              <option value="Existing order">Existing order</option>
+              <option value="Product inquiry">Product inquiry</option>
+              <option value="Exchange or return">Exchange or return</option>
             </select>
           </div>
           <div class="jv-field jv-field--full">
@@ -73,34 +73,34 @@
   "class": "jovaa-section",
   "max_blocks": 6,
   "settings": [
-    { "type": "text", "id": "anchor_id", "label": "معرّف الرابط الداخلي" },
-    { "type": "text", "id": "eyebrow", "label": "النص الصغير", "default": "GET IN TOUCH" },
-    { "type": "text", "id": "heading", "label": "العنوان", "default": "تواصل معنا" },
-    { "type": "text", "id": "subheading", "label": "العنوان الإنجليزي", "default": "WE'RE ALWAYS HERE" },
-    { "type": "richtext", "id": "intro", "label": "المقدمة", "default": "<p>فريق JOVAA جاهز للإجابة عن استفساراتك ومساعدتك في اختيار ما يناسبك.</p>" },
-    { "type": "text", "id": "info_heading", "label": "عنوان معلومات التواصل", "default": "معلومات التواصل" },
-    { "type": "text", "id": "form_heading", "label": "عنوان النموذج", "default": "أرسل لنا رسالة" },
-    { "type": "text", "id": "name_label", "label": "حقل الاسم", "default": "الاسم الكامل" },
-    { "type": "text", "id": "email_label", "label": "حقل البريد", "default": "البريد الإلكتروني" },
-    { "type": "text", "id": "phone_label", "label": "حقل الهاتف", "default": "رقم الهاتف" },
-    { "type": "text", "id": "topic_label", "label": "حقل نوع الاستفسار", "default": "نوع الاستفسار" },
-    { "type": "text", "id": "message_label", "label": "حقل الرسالة", "default": "رسالتك" },
-    { "type": "text", "id": "submit_label", "label": "زر الإرسال", "default": "إرسال الرسالة" },
-    { "type": "text", "id": "success_message", "label": "رسالة النجاح", "default": "شكرًا لتواصلك معنا. سنرد عليك في أقرب وقت." },
-    { "type": "text", "id": "error_message", "label": "رسالة الخطأ", "default": "راجع الحقول التالية ثم حاول مرة أخرى." }
+    { "type": "text", "id": "anchor_id", "label": "Anchor ID" },
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow text", "default": "GET IN TOUCH" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Contact us" },
+    { "type": "text", "id": "subheading", "label": "English subtitle", "default": "WE'RE ALWAYS HERE" },
+    { "type": "richtext", "id": "intro", "label": "Introduction", "default": "<p>The JOVAA team is ready to answer your questions and help you choose what feels right for you.</p>" },
+    { "type": "text", "id": "info_heading", "label": "Contact information heading", "default": "Contact information" },
+    { "type": "text", "id": "form_heading", "label": "Form heading", "default": "Send us a message" },
+    { "type": "text", "id": "name_label", "label": "Name field label", "default": "Full name" },
+    { "type": "text", "id": "email_label", "label": "Email field label", "default": "Email address" },
+    { "type": "text", "id": "phone_label", "label": "Phone field label", "default": "Phone number" },
+    { "type": "text", "id": "topic_label", "label": "Inquiry field label", "default": "Inquiry type" },
+    { "type": "text", "id": "message_label", "label": "Message field label", "default": "Your message" },
+    { "type": "text", "id": "submit_label", "label": "Submit button label", "default": "Send message" },
+    { "type": "text", "id": "success_message", "label": "Success message", "default": "Thank you for contacting us. We will reply as soon as possible." },
+    { "type": "text", "id": "error_message", "label": "Error message", "default": "Please review the fields below and try again." }
   ],
   "blocks": [
     {
-      "type": "contact_method", "name": "وسيلة تواصل",
+      "type": "contact_method", "name": "Contact method",
       "settings": [
         {
-          "type": "select", "id": "icon", "label": "الأيقونة", "default": "phone",
-          "options": [{ "value": "phone", "label": "هاتف" }, { "value": "message", "label": "واتساب" }, { "value": "mail", "label": "بريد" }, { "value": "clock", "label": "مواعيد" }]
+          "type": "select", "id": "icon", "label": "Icon", "default": "phone",
+          "options": [{ "value": "phone", "label": "Phone" }, { "value": "message", "label": "WhatsApp" }, { "value": "mail", "label": "Email" }, { "value": "clock", "label": "Hours" }]
         },
-        { "type": "text", "id": "heading", "label": "العنوان", "default": "اتصل بنا" },
-        { "type": "text", "id": "value", "label": "القيمة", "default": "+20 10 1234 5678" },
-        { "type": "text", "id": "note", "label": "ملاحظة", "default": "من 10 صباحًا إلى 10 مساءً" },
-        { "type": "url", "id": "link", "label": "الرابط" }
+        { "type": "text", "id": "heading", "label": "Heading", "default": "Call us" },
+        { "type": "text", "id": "value", "label": "Value", "default": "+20 10 1234 5678" },
+        { "type": "text", "id": "note", "label": "Note", "default": "10 AM to 10 PM" },
+        { "type": "url", "id": "link", "label": "Link" }
       ]
     }
   ],
@@ -109,9 +109,9 @@
       "name": "JOVAA • Contact",
       "blocks": [
         { "type": "contact_method" },
-        { "type": "contact_method", "settings": { "icon": "message", "heading": "واتساب", "note": "رد سريع خلال ساعات العمل" } },
-        { "type": "contact_method", "settings": { "icon": "mail", "heading": "البريد الإلكتروني", "value": "support@jovaa.com", "note": "نرد خلال 24 ساعة" } },
-        { "type": "contact_method", "settings": { "icon": "clock", "heading": "ساعات خدمة العملاء", "value": "يوميًا من 10 ص إلى 10 م", "note": "بتوقيت القاهرة" } }
+        { "type": "contact_method", "settings": { "icon": "message", "heading": "WhatsApp", "note": "Fast replies during business hours" } },
+        { "type": "contact_method", "settings": { "icon": "mail", "heading": "Email address", "value": "support@jovaa.com", "note": "We reply within 24 hours" } },
+        { "type": "contact_method", "settings": { "icon": "clock", "heading": "Customer care hours", "value": "Daily, 10 AM to 10 PM", "note": "Cairo time" } }
       ]
     }
   ]

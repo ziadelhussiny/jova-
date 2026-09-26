@@ -27,27 +27,27 @@
   "class": "jovaa-section",
   "max_blocks": 6,
   "settings": [
-    { "type": "text", "id": "accessible_title", "label": "عنوان قارئ الشاشة", "default": "مميزات المتجر" },
-    { "type": "text", "id": "eyebrow", "label": "النص الصغير" },
-    { "type": "text", "id": "heading", "label": "العنوان" },
-    { "type": "text", "id": "subheading", "label": "العنوان الإنجليزي" },
-    { "type": "range", "id": "columns", "label": "عدد الأعمدة", "min": 2, "max": 6, "step": 1, "default": 4 }
+    { "type": "text", "id": "accessible_title", "label": "Accessible title", "default": "Store benefits" },
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow text" },
+    { "type": "text", "id": "heading", "label": "Heading" },
+    { "type": "text", "id": "subheading", "label": "English subtitle" },
+    { "type": "range", "id": "columns", "label": "Columns", "min": 2, "max": 6, "step": 1, "default": 4 }
   ],
   "blocks": [
     {
-      "type": "benefit", "name": "ميزة",
+      "type": "benefit", "name": "Benefit",
       "settings": [
         {
-          "type": "select", "id": "icon", "label": "الأيقونة", "default": "badge",
+          "type": "select", "id": "icon", "label": "Icon", "default": "badge",
           "options": [
-            { "value": "badge", "label": "أصلي" }, { "value": "truck", "label": "توصيل" },
-            { "value": "card", "label": "دفع" }, { "value": "box", "label": "طلب" },
-            { "value": "globe", "label": "عالمي" }, { "value": "diamond", "label": "فاخر" },
-            { "value": "shield", "label": "حماية" }, { "value": "heart", "label": "قلب" }
+            { "value": "badge", "label": "Authenticity" }, { "value": "truck", "label": "Delivery" },
+            { "value": "card", "label": "Payment" }, { "value": "box", "label": "Order" },
+            { "value": "globe", "label": "Global" }, { "value": "diamond", "label": "Luxury" },
+            { "value": "shield", "label": "Protection" }, { "value": "heart", "label": "Heart" }
           ]
         },
-        { "type": "text", "id": "heading", "label": "العنوان", "default": "منتجات أصلية 100%" },
-        { "type": "text", "id": "text", "label": "الوصف", "default": "مضمونة من الماركات العالمية" }
+        { "type": "text", "id": "heading", "label": "Heading", "default": "100% authentic products" },
+        { "type": "text", "id": "text", "label": "Description", "default": "Sourced from trusted global brands" }
       ]
     }
   ],
@@ -56,9 +56,9 @@
       "name": "JOVAA • Benefits",
       "blocks": [
         { "type": "benefit" },
-        { "type": "benefit", "settings": { "icon": "truck", "heading": "توصيل لجميع أنحاء مصر", "text": "سريع وموثوق" } },
-        { "type": "benefit", "settings": { "icon": "card", "heading": "دفع آمن", "text": "جميع وسائل الدفع" } },
-        { "type": "benefit", "settings": { "icon": "box", "heading": "طلب سهل", "text": "تجربة تسوق مريحة" } }
+        { "type": "benefit", "settings": { "icon": "truck", "heading": "Delivery across Egypt", "text": "Fast and reliable" } },
+        { "type": "benefit", "settings": { "icon": "card", "heading": "Secure payment", "text": "All major payment methods" } },
+        { "type": "benefit", "settings": { "icon": "box", "heading": "Easy ordering", "text": "A seamless shopping experience" } }
       ]
     }
   ]

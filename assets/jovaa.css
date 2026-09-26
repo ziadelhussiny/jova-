@@ -10,6 +10,7 @@
   --jv-radius: 4px;
   --jv-shadow: 0 14px 40px rgba(75, 53, 32, 0.1);
   --jv-page: min(100% - 32px, 1280px);
+  --jv-display: Georgia, 'Times New Roman', serif;
 }
 
 html { scroll-behavior: smooth; }
@@ -17,6 +18,21 @@ html { scroll-behavior: smooth; }
 body.jovaa-theme {
   background: var(--jv-ivory);
   color: var(--jv-ink);
+}
+
+@media (min-width: 990px) {
+  html:has(body.jovaa-theme),
+  html:has(body.jovaa-theme) body {
+    height: auto;
+    min-height: 100%;
+    overflow-y: auto;
+  }
+
+  body.jovaa-theme .page-wrapper {
+    height: auto;
+    min-height: 100dvh;
+    overflow: visible;
+  }
 }
 
 .jv-shell { width: var(--jv-page); margin-inline: auto; }
@@ -30,7 +46,7 @@ body.jovaa-theme {
 .jv-heading { text-align: center; margin: 0 auto clamp(24px, 4vw, 42px); max-width: 760px; }
 .jv-heading__eyebrow { display: block; color: var(--jv-gold-dark); font-size: 0.72rem; letter-spacing: 0.26em; text-transform: uppercase; margin-bottom: 8px; }
 .jv-heading h2,
-.jv-heading h1 { margin: 0; color: var(--jv-ink); font-size: clamp(1.7rem, 3vw, 2.65rem); line-height: 1.2; text-wrap: balance; }
+.jv-heading h1 { margin: 0; color: var(--jv-ink); font-family: var(--jv-display); font-size: clamp(1.7rem, 3vw, 2.65rem); line-height: 1.2; text-wrap: balance; }
 .jv-heading p { margin: 12px auto 0; color: var(--jv-muted); line-height: 1.8; max-width: 62ch; }
 .jv-heading__rule { display: flex; align-items: center; justify-content: center; gap: 12px; margin-top: 10px; color: var(--jv-gold); }
 .jv-heading__rule::before,
@@ -80,7 +96,7 @@ body.jovaa-theme {
 .jv-hero__content--center .jv-hero__content-inner { margin-inline: auto; }
 .jv-hero__content--end .jv-hero__content-inner { margin-inline-start: auto; }
 .jv-hero__eyebrow { display: block; letter-spacing: .2em; text-transform: uppercase; font-size: .76rem; margin-bottom: 14px; }
-.jv-hero h1 { color: inherit; margin: 0; font-size: clamp(2.1rem, 5vw, 4.5rem); line-height: 1.08; text-wrap: balance; }
+.jv-hero h1 { color: inherit; margin: 0; font-family: var(--jv-display); font-size: clamp(2.1rem, 5vw, 4.5rem); line-height: 1.08; text-wrap: balance; }
 .jv-hero__english { display: block; margin-top: 12px; letter-spacing: .18em; font-size: clamp(.75rem, 1.2vw, 1rem); text-transform: uppercase; }
 .jv-hero__text { max-width: 54ch; margin: 18px 0 24px; line-height: 1.9; font-size: clamp(.95rem, 1.3vw, 1.1rem); }
 .jv-hero__content--center .jv-hero__text { margin-inline: auto; }
@@ -116,8 +132,10 @@ body.jovaa-theme {
 .jv-banner { position: relative; min-height: clamp(260px, 34vw, 440px); overflow: hidden; isolation: isolate; display: flex; align-items: center; color: white; }
 .jv-banner::after { content: ''; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, rgba(28,18,11,.72), rgba(28,18,11,.08)); }
 [dir='rtl'] .jv-banner::after { background: linear-gradient(-90deg, rgba(28,18,11,.72), rgba(28,18,11,.08)); }
+.jv-banner--end { justify-content: flex-end; text-align: right; }
+.jv-banner--end::after { background: linear-gradient(270deg, rgba(28,18,11,.76), rgba(28,18,11,.08)); }
 .jv-banner__content { padding: clamp(24px, 5vw, 56px); max-width: 480px; }
-.jv-banner h3 { margin: 0; color: inherit; font-size: clamp(1.7rem, 3vw, 3rem); line-height: 1.15; }
+.jv-banner h3 { margin: 0; color: inherit; font-family: var(--jv-display); font-size: clamp(1.7rem, 3vw, 3rem); line-height: 1.15; }
 .jv-banner p { margin: 14px 0 20px; line-height: 1.75; }
 
 .jv-scroller { position: relative; }
@@ -140,7 +158,7 @@ body.jovaa-theme {
 .jv-story--reverse .jv-story__media { order: 2; }
 .jv-story__media { position: relative; min-height: clamp(340px, 42vw, 580px); overflow: hidden; }
 .jv-story__content { display: flex; flex-direction: column; justify-content: center; padding: clamp(32px, 6vw, 76px); background: rgba(255,255,255,.38); }
-.jv-story__content h2 { margin: 0; font-size: clamp(1.8rem, 3.5vw, 3.1rem); line-height: 1.2; }
+.jv-story__content h2 { margin: 0; font-family: var(--jv-display); font-size: clamp(1.8rem, 3.5vw, 3.1rem); line-height: 1.2; }
 .jv-story__content .jv-heading__eyebrow { margin-bottom: 10px; }
 .jv-story__content .rte { margin-block: 18px 24px; color: var(--jv-muted); line-height: 1.9; }
 
@@ -181,15 +199,15 @@ body.jovaa-theme {
 [dir='rtl'] .jv-delivery::after { background: linear-gradient(-90deg, rgba(28,18,11,.72), rgba(28,18,11,.06)); }
 .jv-delivery__content { width: var(--jv-page); margin-inline: auto; color: white; }
 .jv-delivery__content-inner { max-width: 520px; }
-.jv-delivery h2 { color: inherit; margin: 0; font-size: clamp(2rem, 4vw, 3.6rem); }
+.jv-delivery h2 { color: inherit; margin: 0; font-family: var(--jv-display); font-size: clamp(2rem, 4vw, 3.6rem); }
 .jv-delivery p { line-height: 1.8; margin: 14px 0 22px; }
 
-[data-jovaa-reveal] { opacity: 0; transform: translateY(18px); transition: opacity 280ms ease, transform 280ms ease; }
-[data-jovaa-reveal].is-visible { opacity: 1; transform: none; }
+[data-jovaa-reveal] { opacity: 1; transform: none; }
 
 body.jovaa-theme .header-announcements { color: #fffaf2; }
 body.jovaa-theme .header-section { box-shadow: 0 1px 0 var(--jv-line); }
 body.jovaa-theme .header__row { backdrop-filter: blur(16px); }
+body.jovaa-theme .header-logo { font-family: var(--jv-display); letter-spacing: .18em; font-size: 1.45rem; }
 body.jovaa-theme footer { background: #f4eadc; }
 
 @media (max-width: 989px) {

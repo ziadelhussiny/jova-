@@ -1,58 +1,58 @@
 {
   "sections": {
-    "jovaa_hero": { "type": "jovaa-hero", "settings": { "eyebrow": "أناقة تُحكى", "heading": "الفخامة في كل تفصيلة", "english_heading": "MORE THAN A FRAGRANCE — A LIFESTYLE", "button_label": "تسوق الآن", "button_link": "shopify://collections/all", "alignment": "start", "height_desktop": 620 } },
+    "jovaa_hero": { "type": "jovaa-hero", "settings": { "fallback_image": "home", "eyebrow": "SIGNATURE MOMENTS", "heading": "Luxury in every detail", "english_heading": "MORE THAN A FRAGRANCE — A LIFESTYLE", "button_label": "Shop now", "button_link": "shopify://collections/all", "alignment": "start", "height_desktop": 620 } },
     "jovaa_categories": {
       "type": "jovaa-category-grid",
       "blocks": {
-        "perfumes": { "type": "category", "settings": { "heading": "العطور", "english_heading": "PERFUMES", "button_label": "تسوق الآن", "link": "shopify://collections/all" } },
-        "bags": { "type": "category", "settings": { "heading": "الحقائب", "english_heading": "BAGS", "button_label": "تسوق الآن", "link": "shopify://collections/all" } }
+        "perfumes": { "type": "category", "settings": { "fallback_image": "perfume", "heading": "Perfumes", "english_heading": "PERFUMES", "button_label": "Shop now", "link": "shopify://collections/all" } },
+        "bags": { "type": "category", "settings": { "fallback_image": "handbag", "heading": "Handbags", "english_heading": "BAGS", "button_label": "Shop now", "link": "shopify://collections/all" } }
       },
       "block_order": ["perfumes", "bags"],
       "settings": { "columns": 2 }
     },
-    "jovaa_products": { "type": "jovaa-product-showcase", "settings": { "heading": "الأكثر مبيعًا", "subheading": "BESTSELLERS", "collection": "all", "products_to_show": 5, "columns": 5, "show_quick_add": true, "add_to_cart_label": "أضف للسلة", "choose_options_label": "اختر الخيارات", "sale_label": "خصم", "show_view_all": true, "view_all_label": "عرض الكل" } },
+    "jovaa_products": { "type": "jovaa-product-showcase", "settings": { "heading": "Bestsellers", "subheading": "BESTSELLERS", "collection": "all", "products_to_show": 5, "columns": 5, "show_quick_add": true, "add_to_cart_label": "Add to cart", "choose_options_label": "Choose options", "sale_label": "Sale", "show_view_all": true, "view_all_label": "View all" } },
     "jovaa_benefits": {
       "type": "jovaa-benefits",
       "blocks": {
-        "authentic": { "type": "benefit", "settings": { "icon": "badge", "heading": "منتجات أصلية 100%", "text": "مضمونة من الماركات العالمية" } },
-        "delivery": { "type": "benefit", "settings": { "icon": "truck", "heading": "توصيل لجميع أنحاء مصر", "text": "سريع وموثوق" } },
-        "payment": { "type": "benefit", "settings": { "icon": "card", "heading": "دفع آمن", "text": "جميع وسائل الدفع" } },
-        "easy": { "type": "benefit", "settings": { "icon": "box", "heading": "طلب سهل", "text": "تجربة تسوق مريحة" } }
+        "authentic": { "type": "benefit", "settings": { "icon": "badge", "heading": "100% authentic products", "text": "Sourced from trusted global brands" } },
+        "delivery": { "type": "benefit", "settings": { "icon": "truck", "heading": "Delivery across Egypt", "text": "Fast and reliable" } },
+        "payment": { "type": "benefit", "settings": { "icon": "card", "heading": "Secure payment", "text": "All major payment methods" } },
+        "easy": { "type": "benefit", "settings": { "icon": "box", "heading": "Easy ordering", "text": "A seamless shopping experience" } }
       },
       "block_order": ["authentic", "delivery", "payment", "easy"],
-      "settings": { "accessible_title": "مميزات JOVAA", "columns": 4 }
+      "settings": { "accessible_title": "Why shop JOVAA", "columns": 4 }
     },
     "jovaa_banners": {
       "type": "jovaa-banner-grid",
       "blocks": {
-        "perfume": { "type": "banner", "settings": { "eyebrow": "A SCENT, A BETTER YOU", "heading": "اكتشفي مجموعتنا الحصرية من العطور", "button_label": "تسوق المجموعة", "link": "shopify://collections/all" } },
-        "bags": { "type": "banner", "settings": { "eyebrow": "TIMELESS ELEGANCE", "heading": "حقائب أصلية تكمل إطلالتك", "button_label": "تسوق الحقائب", "link": "shopify://collections/all" } }
+        "perfume": { "type": "banner", "settings": { "fallback_image": "editorial", "content_position": "end", "eyebrow": "A SCENT, A BETTER YOU", "heading": "Discover our exclusive fragrance edit", "button_label": "Shop the collection", "link": "shopify://collections/all" } },
+        "bags": { "type": "banner", "settings": { "fallback_image": "handbag", "content_position": "start", "eyebrow": "TIMELESS ELEGANCE", "heading": "Timeless bags for every look", "button_label": "Shop handbags", "link": "shopify://collections/all" } }
       },
       "block_order": ["perfume", "bags"],
-      "settings": { "accessible_title": "مجموعات JOVAA", "columns": 2 }
+      "settings": { "accessible_title": "JOVAA collections", "columns": 2 }
     },
     "jovaa_reviews": {
       "type": "jovaa-testimonials",
       "blocks": {
-        "review_1": { "type": "testimonial", "settings": { "rating": 5, "quote": "العطر أصلي والتغليف راقٍ جدًا، والتوصيل كان سريعًا.", "name": "Nadine M.", "location": "Cairo" } },
-        "review_2": { "type": "testimonial", "settings": { "rating": 5, "quote": "من أفضل المتاجر لشراء العطور الأصلية. خدمة ممتازة.", "name": "Ahmed K.", "location": "Giza" } },
-        "review_3": { "type": "testimonial", "settings": { "rating": 5, "quote": "التغليف فاخر والمنتج وصل بحالة ممتازة. تجربة جميلة جدًا.", "name": "Sara H.", "location": "Alexandria" } }
+        "review_1": { "type": "testimonial", "settings": { "rating": 5, "quote": "The fragrance is authentic, the packaging is beautiful, and delivery was quick.", "name": "Nadine M.", "location": "Cairo" } },
+        "review_2": { "type": "testimonial", "settings": { "rating": 5, "quote": "One of the best places to shop authentic fragrances. Excellent service.", "name": "Ahmed K.", "location": "Giza" } },
+        "review_3": { "type": "testimonial", "settings": { "rating": 5, "quote": "Luxurious packaging and the product arrived in perfect condition.", "name": "Sara H.", "location": "Alexandria" } }
       },
       "block_order": ["review_1", "review_2", "review_3"],
-      "settings": { "heading": "آراء عملائنا", "subheading": "CUSTOMER LOVE" }
+      "settings": { "heading": "Loved by our customers", "subheading": "CUSTOMER LOVE" }
     },
     "jovaa_social": {
       "type": "jovaa-social-gallery",
       "blocks": {
-        "social_1": { "type": "image", "settings": { "label": "شاهد المنشور الأول" } },
-        "social_2": { "type": "image", "settings": { "label": "شاهد المنشور الثاني" } },
-        "social_3": { "type": "image", "settings": { "label": "شاهد المنشور الثالث" } },
-        "social_4": { "type": "image", "settings": { "label": "شاهد المنشور الرابع" } },
-        "social_5": { "type": "image", "settings": { "label": "شاهد المنشور الخامس" } },
-        "social_6": { "type": "image", "settings": { "label": "شاهد المنشور السادس" } }
+        "social_1": { "type": "image", "settings": { "fallback_image": "hero", "label": "View the first Instagram post" } },
+        "social_2": { "type": "image", "settings": { "fallback_image": "editorial", "label": "View the second Instagram post" } },
+        "social_3": { "type": "image", "settings": { "fallback_image": "handbag", "label": "View the third Instagram post" } },
+        "social_4": { "type": "image", "settings": { "fallback_image": "perfume", "label": "View the fourth Instagram post" } },
+        "social_5": { "type": "image", "settings": { "fallback_image": "cairo", "label": "View the fifth Instagram post" } },
+        "social_6": { "type": "image", "settings": { "fallback_image": "hero", "label": "View the sixth Instagram post" } }
       },
       "block_order": ["social_1", "social_2", "social_3", "social_4", "social_5", "social_6"],
-      "settings": { "heading": "تابعونا على إنستجرام", "handle": "@jovaa.perfumes", "columns": 6 }
+      "settings": { "heading": "Follow us on Instagram", "handle": "@jovaa.perfumes", "columns": 6 }
     }
   },
   "order": ["jovaa_hero", "jovaa_categories", "jovaa_products", "jovaa_benefits", "jovaa_banners", "jovaa_reviews", "jovaa_social"]

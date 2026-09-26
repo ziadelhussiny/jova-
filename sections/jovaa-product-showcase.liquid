@@ -25,7 +25,7 @@
           </div>
           <h3 class="jv-product__title"><a href="{{ product.url }}">{{ product.title | escape }}</a></h3>
           <div class="jv-product__price">
-            {%- if product.price_varies -%}ابتداءً من {{ product.price_min | money }}{%- else -%}{{ product.price | money }}{%- endif -%}
+            {%- if product.price_varies -%}From {{ product.price_min | money }}{%- else -%}{{ product.price | money }}{%- endif -%}
           </div>
           {%- if section.settings.show_quick_add -%}
             {%- if product.available and product.has_only_default_variant -%}
@@ -40,10 +40,16 @@
         </article>
       {%- else -%}
         {%- for index in (1..4) -%}
+          {%- assign fallback_asset = 'jovaa-perfume.webp' -%}
+          {%- assign fallback_title = 'JOVAA Signature Eau de Parfum' -%}
+          {%- if index == 2 or index == 4 -%}
+            {%- assign fallback_asset = 'jovaa-handbag.webp' -%}
+            {%- assign fallback_title = 'JOVAA Timeless Handbag' -%}
+          {%- endif -%}
           <article class="jv-product">
-            <div class="jv-product__media"><div class="jv-media-placeholder">{{ 'product-' | append: index | placeholder_svg_tag }}</div></div>
-            <h3 class="jv-product__title">منتج JOVAA</h3>
-            <div class="jv-product__price">{{ 9500 | money }}</div>
+            <div class="jv-product__media"><img src="{{ fallback_asset | asset_url }}" width="700" height="875" loading="lazy" alt="{{ fallback_title }}"></div>
+            <h3 class="jv-product__title">{{ fallback_title }}</h3>
+            <div class="jv-product__price">From {{ 9500 | money }}</div>
           </article>
         {%- endfor -%}
       {%- endfor -%}
@@ -63,18 +69,18 @@
   "tag": "section",
   "class": "jovaa-section",
   "settings": [
-    { "type": "text", "id": "eyebrow", "label": "النص الصغير" },
-    { "type": "text", "id": "heading", "label": "العنوان", "default": "الأكثر مبيعًا" },
-    { "type": "text", "id": "subheading", "label": "العنوان الإنجليزي", "default": "BESTSELLERS" },
-    { "type": "collection", "id": "collection", "label": "المجموعة" },
-    { "type": "range", "id": "products_to_show", "label": "عدد المنتجات", "min": 2, "max": 12, "step": 1, "default": 5 },
-    { "type": "range", "id": "columns", "label": "أعمدة سطح المكتب", "min": 2, "max": 5, "step": 1, "default": 5 },
-    { "type": "checkbox", "id": "show_quick_add", "label": "إظهار زر الإضافة", "default": true },
-    { "type": "text", "id": "add_to_cart_label", "label": "نص زر الإضافة", "default": "أضف للسلة" },
-    { "type": "text", "id": "choose_options_label", "label": "نص اختيار الخيارات", "default": "اختر الخيارات" },
-    { "type": "text", "id": "sale_label", "label": "شارة التخفيض", "default": "خصم" },
-    { "type": "checkbox", "id": "show_view_all", "label": "إظهار عرض الكل", "default": true },
-    { "type": "text", "id": "view_all_label", "label": "نص عرض الكل", "default": "عرض الكل" }
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow text" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Bestsellers" },
+    { "type": "text", "id": "subheading", "label": "English subtitle", "default": "BESTSELLERS" },
+    { "type": "collection", "id": "collection", "label": "Collection" },
+    { "type": "range", "id": "products_to_show", "label": "Products to show", "min": 2, "max": 12, "step": 1, "default": 5 },
+    { "type": "range", "id": "columns", "label": "Desktop columns", "min": 2, "max": 5, "step": 1, "default": 5 },
+    { "type": "checkbox", "id": "show_quick_add", "label": "Show add to cart button", "default": true },
+    { "type": "text", "id": "add_to_cart_label", "label": "Add to cart label", "default": "Add to cart" },
+    { "type": "text", "id": "choose_options_label", "label": "Choose options label", "default": "Choose options" },
+    { "type": "text", "id": "sale_label", "label": "Sale badge", "default": "Sale" },
+    { "type": "checkbox", "id": "show_view_all", "label": "Show view all link", "default": true },
+    { "type": "text", "id": "view_all_label", "label": "View all label", "default": "View all" }
   ],
   "presets": [{ "name": "JOVAA • Products" }]
 }

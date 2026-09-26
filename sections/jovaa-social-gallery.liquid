@@ -5,6 +5,13 @@
     <div class="jv-grid jv-social" style="--jv-columns: {{ section.settings.columns }};" data-jovaa-reveal>
       {%- for block in section.blocks -%}
         {%- assign social_alt = block.settings.image.alt | default: block.settings.label -%}
+        {%- assign fallback_asset = 'jovaa-perfume.webp' -%}
+        {%- case block.settings.fallback_image -%}
+          {%- when 'handbag' -%}{%- assign fallback_asset = 'jovaa-handbag.webp' -%}
+          {%- when 'editorial' -%}{%- assign fallback_asset = 'jovaa-editorial.webp' -%}
+          {%- when 'cairo' -%}{%- assign fallback_asset = 'jovaa-cairo.webp' -%}
+          {%- when 'hero' -%}{%- assign fallback_asset = 'jovaa-home-hero.webp' -%}
+        {%- endcase -%}
         <a class="jv-social__item" href="{{ block.settings.link | default: section.settings.profile_link }}" {{ block.shopify_attributes }} aria-label="{{ block.settings.label | escape }}">
           {%- if block.settings.image != blank -%}
             {{ block.settings.image
@@ -16,7 +23,7 @@
                 alt: social_alt
             }}
           {%- else -%}
-            <div class="jv-media-placeholder">{{ 'image' | placeholder_svg_tag }}</div>
+            <img src="{{ fallback_asset | asset_url }}" width="640" height="640" loading="lazy" alt="{{ social_alt | escape }}">
           {%- endif -%}
         </a>
       {%- endfor -%}
@@ -31,19 +38,27 @@
   "class": "jovaa-section",
   "max_blocks": 12,
   "settings": [
-    { "type": "text", "id": "eyebrow", "label": "النص الصغير" },
-    { "type": "text", "id": "heading", "label": "العنوان", "default": "تابعونا على إنستجرام" },
-    { "type": "text", "id": "handle", "label": "اسم الحساب", "default": "@jovaa.perfumes" },
-    { "type": "url", "id": "profile_link", "label": "رابط الحساب" },
-    { "type": "range", "id": "columns", "label": "عدد الأعمدة", "min": 3, "max": 8, "step": 1, "default": 6 }
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow text" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Follow us on Instagram" },
+    { "type": "text", "id": "handle", "label": "Account handle", "default": "@jovaa.perfumes" },
+    { "type": "url", "id": "profile_link", "label": "Profile link" },
+    { "type": "range", "id": "columns", "label": "Columns", "min": 3, "max": 8, "step": 1, "default": 6 }
   ],
   "blocks": [
     {
-      "type": "image", "name": "صورة",
+      "type": "image", "name": "Image",
       "settings": [
-        { "type": "image_picker", "id": "image", "label": "الصورة" },
-        { "type": "text", "id": "label", "label": "وصف الرابط", "default": "شاهد المنشور على إنستجرام" },
-        { "type": "url", "id": "link", "label": "رابط المنشور" }
+        { "type": "image_picker", "id": "image", "label": "Image" },
+        {
+          "type": "select", "id": "fallback_image", "label": "Built-in fallback image", "default": "perfume",
+          "options": [
+            { "value": "perfume", "label": "Perfume" }, { "value": "handbag", "label": "Handbag" },
+            { "value": "editorial", "label": "Editorial model" }, { "value": "cairo", "label": "Cairo" },
+            { "value": "hero", "label": "Perfume and handbag" }
+          ]
+        },
+        { "type": "text", "id": "label", "label": "Link description", "default": "View this post on Instagram" },
+        { "type": "url", "id": "link", "label": "Post link" }
       ]
     }
   ],

@@ -3,8 +3,8 @@
   {% if request.design_mode %}
     class="shopify-design-mode"
   {% endif %}
-  lang="{{ request.locale.iso_code }}"
-  dir="{{ request.locale.direction | default: 'ltr' }}"
+  lang="en"
+  dir="ltr"
 >
   <head>
     {%- if settings.favicon != blank -%}

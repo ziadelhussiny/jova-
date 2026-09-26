@@ -30,22 +30,3 @@ class JovaaScroller extends HTMLElement {
 if (!customElements.get('jovaa-scroller')) {
   customElements.define('jovaa-scroller', JovaaScroller);
 }
-
-const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
-
-if (!prefersReducedMotion.matches && 'IntersectionObserver' in window) {
-  const revealObserver = new IntersectionObserver(
-    (entries, observer) => {
-      entries.forEach((entry) => {
-        if (!entry.isIntersecting) return;
-        entry.target.classList.add('is-visible');
-        observer.unobserve(entry.target);
-      });
-    },
-    { rootMargin: '0px 0px -8% 0px', threshold: 0.08 },
-  );
-
-  document.querySelectorAll('[data-jovaa-reveal]').forEach((element) => revealObserver.observe(element));
-} else {
-  document.querySelectorAll('[data-jovaa-reveal]').forEach((element) => element.classList.add('is-visible'));
-}

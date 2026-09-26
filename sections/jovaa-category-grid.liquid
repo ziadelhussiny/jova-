@@ -9,6 +9,8 @@
     <div class="jv-grid jv-categories" style="--jv-columns: {{ section.settings.columns }};">
       {%- for block in section.blocks -%}
         {%- assign category_alt = block.settings.image.alt | default: block.settings.heading -%}
+        {%- assign fallback_asset = 'jovaa-perfume.webp' -%}
+        {%- if block.settings.fallback_image == 'handbag' -%}{%- assign fallback_asset = 'jovaa-handbag.webp' -%}{%- endif -%}
         <article class="jv-category" {{ block.shopify_attributes }} data-jovaa-reveal>
           {%- if block.settings.image != blank -%}
             {{ block.settings.image
@@ -20,7 +22,7 @@
                 alt: category_alt
             }}
           {%- else -%}
-            <div class="jv-media-placeholder">{{ 'collection-1' | placeholder_svg_tag }}</div>
+            <img src="{{ fallback_asset | asset_url }}" width="1456" height="1092" loading="lazy" alt="{{ category_alt | escape }}">
           {%- endif -%}
           <div class="jv-category__content">
             <h3>{{ block.settings.heading | escape }}</h3>
@@ -42,28 +44,32 @@
   "class": "jovaa-section",
   "max_blocks": 4,
   "settings": [
-    { "type": "text", "id": "accessible_title", "label": "عنوان قارئ الشاشة", "default": "تسوق حسب الفئة" },
-    { "type": "text", "id": "eyebrow", "label": "النص الصغير" },
-    { "type": "text", "id": "heading", "label": "العنوان" },
-    { "type": "text", "id": "subheading", "label": "العنوان الإنجليزي" },
-    { "type": "range", "id": "columns", "label": "عدد الأعمدة", "min": 1, "max": 4, "step": 1, "default": 2 }
+    { "type": "text", "id": "accessible_title", "label": "Accessible title", "default": "Shop by category" },
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow text" },
+    { "type": "text", "id": "heading", "label": "Heading" },
+    { "type": "text", "id": "subheading", "label": "English subtitle" },
+    { "type": "range", "id": "columns", "label": "Columns", "min": 1, "max": 4, "step": 1, "default": 2 }
   ],
   "blocks": [
     {
-      "type": "category", "name": "فئة",
+      "type": "category", "name": "Category",
       "settings": [
-        { "type": "image_picker", "id": "image", "label": "الصورة" },
-        { "type": "text", "id": "heading", "label": "العنوان", "default": "العطور" },
-        { "type": "text", "id": "english_heading", "label": "العنوان الإنجليزي", "default": "PERFUMES" },
-        { "type": "text", "id": "button_label", "label": "نص الزر", "default": "تسوق الآن" },
-        { "type": "url", "id": "link", "label": "الرابط" }
+        { "type": "image_picker", "id": "image", "label": "Image" },
+        {
+          "type": "select", "id": "fallback_image", "label": "Built-in fallback image", "default": "perfume",
+          "options": [{ "value": "perfume", "label": "Perfume" }, { "value": "handbag", "label": "Handbag" }]
+        },
+        { "type": "text", "id": "heading", "label": "Heading", "default": "Perfumes" },
+        { "type": "text", "id": "english_heading", "label": "English subtitle", "default": "PERFUMES" },
+        { "type": "text", "id": "button_label", "label": "Button label", "default": "Shop now" },
+        { "type": "url", "id": "link", "label": "Link" }
       ]
     }
   ],
   "presets": [
     {
       "name": "JOVAA • Categories",
-      "blocks": [{ "type": "category" }, { "type": "category", "settings": { "heading": "الحقائب", "english_heading": "BAGS" } }]
+      "blocks": [{ "type": "category" }, { "type": "category", "settings": { "heading": "Handbags", "english_heading": "BAGS" } }]
     }
   ]
 }

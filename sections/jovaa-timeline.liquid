@@ -23,21 +23,21 @@
   "class": "jovaa-section",
   "max_blocks": 6,
   "settings": [
-    { "type": "text", "id": "eyebrow", "label": "النص الصغير" },
-    { "type": "text", "id": "heading", "label": "العنوان", "default": "رحلتنا في أرقام" },
-    { "type": "text", "id": "subheading", "label": "العنوان الإنجليزي", "default": "OUR JOURNEY" },
-    { "type": "range", "id": "columns", "label": "عدد الأعمدة", "min": 2, "max": 6, "step": 1, "default": 4 }
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow text" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Our journey" },
+    { "type": "text", "id": "subheading", "label": "English subtitle", "default": "OUR JOURNEY" },
+    { "type": "range", "id": "columns", "label": "Columns", "min": 2, "max": 6, "step": 1, "default": 4 }
   ],
   "blocks": [
     {
-      "type": "milestone", "name": "محطة",
+      "type": "milestone", "name": "Milestone",
       "settings": [
-        { "type": "text", "id": "year", "label": "السنة", "default": "2023" },
-        { "type": "text", "id": "heading", "label": "العنوان", "default": "بداية الرحلة" },
-        { "type": "text", "id": "text", "label": "الوصف", "default": "انطلاق JOVAA في مصر" },
+        { "type": "text", "id": "year", "label": "Year", "default": "2023" },
+        { "type": "text", "id": "heading", "label": "Heading", "default": "The beginning" },
+        { "type": "text", "id": "text", "label": "Description", "default": "JOVAA launches in Egypt" },
         {
-          "type": "select", "id": "icon", "label": "الأيقونة", "default": "store",
-          "options": [{ "value": "store", "label": "متجر" }, { "value": "people", "label": "عملاء" }, { "value": "box", "label": "منتجات" }, { "value": "diamond", "label": "طموح" }]
+          "type": "select", "id": "icon", "label": "Icon", "default": "store",
+          "options": [{ "value": "store", "label": "Store" }, { "value": "people", "label": "Customers" }, { "value": "box", "label": "Products" }, { "value": "diamond", "label": "Vision" }]
         }
       ]
     }
@@ -47,9 +47,9 @@
       "name": "JOVAA • Timeline",
       "blocks": [
         { "type": "milestone" },
-        { "type": "milestone", "settings": { "year": "2024", "heading": "آلاف العملاء", "text": "بناء مجتمع من محبي الفخامة", "icon": "people" } },
-        { "type": "milestone", "settings": { "year": "2024–2025", "heading": "توسع وتنوع", "text": "المزيد من الماركات العالمية", "icon": "box" } },
-        { "type": "milestone", "settings": { "year": "المستقبل", "heading": "أكثر إشراقًا", "text": "مواصلة رحلتنا لنكون دائمًا وجهتك الأولى", "icon": "diamond" } }
+        { "type": "milestone", "settings": { "year": "2024", "heading": "Thousands of customers", "text": "A growing community of luxury lovers", "icon": "people" } },
+        { "type": "milestone", "settings": { "year": "2024–2025", "heading": "Growth and discovery", "text": "A wider edit of global brands", "icon": "box" } },
+        { "type": "milestone", "settings": { "year": "The future", "heading": "A brighter future", "text": "Continuing our journey to remain your first destination", "icon": "diamond" } }
       ]
     }
   ]
