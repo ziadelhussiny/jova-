@@ -9,47 +9,175 @@
  */
 {
   "sections": {
-    "contact_hero": { "type": "jovaa-hero", "settings": { "fallback_image": "home", "eyebrow": "WE ARE ALWAYS HERE FOR YOU", "heading": "Contact us", "english_heading": "GET IN TOUCH", "text": "<p>The JOVAA team is ready to answer your questions and help you choose what feels right for you.</p>", "button_label": "", "alignment": "start", "height_desktop": 460 } },
-    "contact_hub": {
-      "type": "jovaa-contact-hub",
-      "blocks": {
-        "phone": { "type": "contact_method", "settings": { "icon": "phone", "heading": "Call us", "value": "+20 10 1234 5678", "note": "10 AM to 10 PM" } },
-        "whatsapp": { "type": "contact_method", "settings": { "icon": "message", "heading": "WhatsApp", "value": "+20 10 1234 5678", "note": "Fast replies during business hours" } },
-        "email": { "type": "contact_method", "settings": { "icon": "mail", "heading": "Email address", "value": "support@jovaa.com", "note": "We reply within 24 hours" } },
-        "hours": { "type": "contact_method", "settings": { "icon": "clock", "heading": "Customer care hours", "value": "Daily, 10 AM to 10 PM", "note": "Cairo time" } }
-      },
-      "block_order": ["phone", "whatsapp", "email", "hours"],
-      "settings": { "anchor_id": "contact-form", "eyebrow": "GET IN TOUCH", "heading": "We are here to help", "subheading": "CONTACT INFORMATION", "info_heading": "Contact information", "form_heading": "Send us a message", "name_label": "Full name", "email_label": "Email address", "phone_label": "Phone number", "topic_label": "Inquiry type", "message_label": "Your message", "submit_label": "Send message", "success_message": "Thank you for contacting us. We will reply as soon as possible.", "error_message": "Please review the fields below and try again." }
+    "hero": {
+      "type": "maliki-hero",
+      "settings": {
+        "image_position": "center",
+        "direction": "ltr",
+        "eyebrow": "Let's stay connected",
+        "heading": "Contact Us",
+        "copy": "<p>We’re here to help and happy to hear from you. Whether you have a question, need support, or want to learn more about our products, our team is always ready to assist you.</p>",
+        "button_label": "",
+        "button_link": "",
+        "button_style": "red",
+        "height": 320,
+        "show_dots": false
+      }
     },
-    "faq_links": {
-      "type": "jovaa-faq-links",
+    "hub": {
+      "type": "maliki-contact-hub",
       "blocks": {
-        "shipping": { "type": "link", "settings": { "icon": "box", "heading": "Shipping and delivery", "text": "Delivery information for every governorate" } },
-        "authentic": { "type": "link", "settings": { "icon": "badge", "heading": "Authentic products", "text": "How we guarantee every product is authentic" } },
-        "payment": { "type": "link", "settings": { "icon": "card", "heading": "Payments and orders", "text": "Payment methods and order confirmation" } },
-        "returns": { "type": "link", "settings": { "icon": "return", "heading": "Returns and exchanges", "text": "Our return and exchange policy" } }
+        "phone": {
+          "type": "method",
+          "settings": {
+            "icon": "☎",
+            "title": "Phone",
+            "line_1": "+20 10 1234 5678",
+            "line_2": "Sun – Thu · 9 AM – 8 PM",
+            "link": ""
+          }
+        },
+        "email": {
+          "type": "method",
+          "settings": {
+            "icon": "✉",
+            "title": "Email",
+            "line_1": "info@maliki-arabic.com",
+            "line_2": "We respond within 24 hours",
+            "link": ""
+          }
+        },
+        "location": {
+          "type": "method",
+          "settings": {
+            "icon": "⌖",
+            "title": "Our Location",
+            "line_1": "Cairo, Egypt",
+            "line_2": "6th of October City",
+            "link": ""
+          }
+        },
+        "whatsapp": {
+          "type": "method",
+          "settings": {
+            "icon": "◉",
+            "title": "WhatsApp",
+            "line_1": "+20 10 1234 5678",
+            "line_2": "Chat with us directly",
+            "link": ""
+          }
+        },
+        "faq1": {
+          "type": "faq",
+          "settings": {
+            "question": "What are your working hours?",
+            "answer": "<p>Sunday through Thursday, from 9:00 AM to 8:00 PM.</p>"
+          }
+        },
+        "faq2": {
+          "type": "faq",
+          "settings": {
+            "question": "How long does delivery take?",
+            "answer": "<p>Delivery time depends on your location and the selected product.</p>"
+          }
+        },
+        "faq3": {
+          "type": "faq",
+          "settings": {
+            "question": "Can I customize my majlis set?",
+            "answer": "<p>Yes. Contact our team to discuss fabrics, sizes, and available options.</p>"
+          }
+        }
       },
-      "block_order": ["shipping", "authentic", "payment", "returns"],
-      "settings": { "heading": "Frequently asked questions", "subheading": "FAQ QUICK LINKS", "columns": 4 }
+      "block_order": [
+        "phone",
+        "email",
+        "location",
+        "whatsapp",
+        "faq1",
+        "faq2",
+        "faq3"
+      ],
+      "settings": {
+        "direction": "ltr",
+        "form_heading": "Send Us a Message",
+        "form_text": "Fill in the form below and we’ll get back to you as soon as possible.",
+        "name_placeholder": "Full Name *",
+        "email_placeholder": "Email Address *",
+        "subject_placeholder": "Subject *",
+        "message_placeholder": "Your Message *",
+        "submit_label": "Send Message",
+        "success_message": "Thank you. We’ll be in touch soon.",
+        "methods_heading": "Get in Touch",
+        "methods_text": "Choose your preferred way to reach us. We’re always here for you.",
+        "faq_heading": "Frequently Asked Questions"
+      }
     },
-    "egypt_delivery": { "type": "jovaa-delivery-banner", "settings": { "layout": "split", "eyebrow": "LUXURY DELIVERS EVERYWHERE", "heading": "Across all Egypt", "english_heading": "ACROSS ALL EGYPT", "text": "<p>Wherever you are in Egypt, we deliver quickly and securely to your door.</p>", "button_label": "Shop now", "button_link": "shopify://collections/all" } },
-    "contact_banners": {
-      "type": "jovaa-banner-grid",
-      "blocks": {
-        "one": { "type": "banner", "settings": { "fallback_image": "editorial", "content_position": "end", "eyebrow": "A SCENT, A BETTER YOU", "heading": "Every story begins with a signature scent", "button_label": "Shop now", "link": "shopify://collections/all" } },
-        "two": { "type": "banner", "settings": { "fallback_image": "handbag", "content_position": "start", "eyebrow": "WE'RE HERE FOR YOU", "heading": "Responsive support, exceptional care", "button_label": "Contact us", "link": "#contact-form" } }
-      },
-      "block_order": ["one", "two"],
-      "settings": { "accessible_title": "Discover JOVAA", "columns": 2 }
+    "showroom": {
+      "type": "maliki-showroom",
+      "settings": {
+        "heading": "Visit Our Showroom",
+        "text": "Experience our majlis sets and Arabic heritage collections in person. We’d love to welcome you!",
+        "address": "6th of October City, Giza Governorate",
+        "hours": "Sun – Thu · 9:00 AM – 8:00 PM",
+        "button_label": "Get Directions",
+        "button_link": "",
+        "map_label": "Maliki Arabic",
+        "map_link": "",
+        "direction": "ltr"
+      }
     },
-    "contact_benefits": {
-      "type": "jovaa-benefits",
+    "benefits": {
+      "type": "maliki-icon-strip",
       "blocks": {
-        "one": { "type": "benefit", "settings": { "icon": "truck", "heading": "Fast delivery", "text": "Across every Egyptian governorate" } }, "two": { "type": "benefit", "settings": { "icon": "badge", "heading": "Authentic products", "text": "Guaranteed authentic" } }, "three": { "type": "benefit", "settings": { "icon": "card", "heading": "Secure payment", "text": "Multiple payment methods" } }, "four": { "type": "benefit", "settings": { "icon": "clock", "heading": "Contact us", "text": "Daily support" } }
+        "b1": {
+          "type": "feature",
+          "settings": {
+            "icon": "▣",
+            "title": "Easy Transport",
+            "text": "Lightweight & Foldable"
+          }
+        },
+        "b2": {
+          "type": "feature",
+          "settings": {
+            "icon": "◆",
+            "title": "Durable Materials",
+            "text": "Built for Real Adventures"
+          }
+        },
+        "b3": {
+          "type": "feature",
+          "settings": {
+            "icon": "▲",
+            "title": "Traditional Style",
+            "text": "Authentic Arabic Design"
+          }
+        },
+        "b4": {
+          "type": "feature",
+          "settings": {
+            "icon": "◇",
+            "title": "Fast Delivery",
+            "text": "Across Egypt"
+          }
+        }
       },
-      "block_order": ["one", "two", "three", "four"],
-      "settings": { "accessible_title": "Service benefits", "columns": 4 }
+      "block_order": [
+        "b1",
+        "b2",
+        "b3",
+        "b4"
+      ],
+      "settings": {
+        "direction": "ltr"
+      }
     }
   },
-  "order": ["contact_hero", "contact_hub", "faq_links", "egypt_delivery", "contact_banners", "contact_benefits"]
+  "order": [
+    "hero",
+    "hub",
+    "showroom",
+    "benefits"
+  ]
 }
