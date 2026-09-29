@@ -1,39 +1,26 @@
 /*
  * ------------------------------------------------------------
  * IMPORTANT: The contents of this file are auto-generated.
- *
- * This file may be updated by the Shopify admin theme editor
- * or related systems. Please exercise caution as any changes
- * made to this file may be overwritten.
+ * This file may be updated by the Shopify theme editor.
  * ------------------------------------------------------------
  */
 {
   "type": "footer",
-  "name": "Footer group",
+  "name": "t:names.footer",
   "sections": {
-    "maliki_footer": {
-      "type": "maliki-footer",
-      "blocks": {
-        "facebook": { "type": "social", "settings": { "label": "Facebook", "short_label": "f" } },
-        "instagram": { "type": "social", "settings": { "label": "Instagram", "short_label": "ig" } },
-        "tiktok": { "type": "social", "settings": { "label": "TikTok", "short_label": "♪" } },
-        "youtube": { "type": "social", "settings": { "label": "YouTube", "short_label": "▶" } }
-      },
-      "block_order": ["facebook", "instagram", "tiktok", "youtube"],
+    "jovaa_footer": {
+      "type": "jovaa-footer",
       "settings": {
-        "brand_copy": "Authentic Products\nLasting Gatherings",
-        "menu_heading": "Quick Links",
-        "contact_heading": "Get In Touch",
-        "address": "Cairo, Egypt",
-        "phone": "+20 10 1234 5678",
-        "email": "info@maliki-arabic.com",
-        "social_heading": "Follow Us",
-        "copyright": "Maliki – For Arabic Heritage. All rights reserved.",
-        "bottom_note": "Proudly Egyptian 🇪🇬  |  Heritage Lives On",
-        "accent_color": "#b98a42",
-        "direction": "ltr"
+        "menu": "footer",
+        "tagline": "More than a fragrance — a lifestyle",
+        "copyright": "JOVAA",
+        "closing_line": "A more beautiful you",
+        "instagram_url": "https://www.instagram.com/",
+        "facebook_url": "https://www.facebook.com/",
+        "tiktok_url": "https://www.tiktok.com/",
+        "youtube_url": "https://www.youtube.com/"
       }
     }
   },
-  "order": ["maliki_footer"]
+  "order": ["jovaa_footer"]
 }

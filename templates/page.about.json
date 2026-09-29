@@ -1,0 +1,63 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "about_hero": { "type": "jovaa-hero", "settings": { "fallback_image": "about", "eyebrow": "About us", "heading": "More than fragrance. A way of life.", "english_heading": "MORE THAN A FRAGRANCE — A LIFESTYLE", "button_label": "Discover our story", "button_link": "#our-story", "alignment": "start", "height_desktop": 520 } },
+    "our_story": { "type": "jovaa-story", "settings": { "fallback_image": "cairo", "anchor_id": "our-story", "image_position": "start", "eyebrow": "Born in Egypt, made for lovers of luxury", "heading": "Our story", "english_heading": "OUR STORY", "text": "<p>JOVAA was founded in Egypt from a genuine passion for fine fragrance and exceptional handbags. We believe everyone deserves an authentic luxury experience, so we bring a considered world of style together in one place.</p>", "button_label": "Discover our vision", "button_link": "#philosophy" } },
+    "authenticity": { "type": "jovaa-story", "settings": { "fallback_image": "authenticity", "image_position": "end", "eyebrow": "AUTHENTICITY IS OUR PROMISE", "heading": "Authenticity and sourcing", "english_heading": "AUTHENTICITY & SOURCING", "text": "<p>We carefully source authentic products from trusted global brands. Every item is reviewed so it reaches you with the quality, finish, and confidence you expect.</p>", "hide_on_mobile": true } },
+    "about_benefits": {
+      "type": "jovaa-benefits",
+      "blocks": {
+        "one": { "type": "benefit", "settings": { "icon": "shield", "heading": "100% authentic products", "text": "Quality guaranteed" } },
+        "two": { "type": "benefit", "settings": { "icon": "globe", "heading": "Trusted global sourcing", "text": "Reliable and approved partners" } },
+        "three": { "type": "benefit", "settings": { "icon": "truck", "heading": "Delivery across Egypt", "text": "Fast and secure to your doorstep" } },
+        "four": { "type": "benefit", "settings": { "icon": "diamond", "heading": "A luxury customer experience", "text": "Because you deserve the very best" } }
+      },
+      "block_order": ["one", "two", "three", "four"],
+      "settings": { "accessible_title": "The JOVAA promise", "columns": 4 }
+    },
+    "philosophy": {
+      "type": "jovaa-banner-grid",
+      "blocks": { "philosophy_banner": { "type": "banner", "settings": { "fallback_image": "editorial", "content_position": "end", "eyebrow": "OUR PHILOSOPHY", "heading": "We believe true beauty lives in the details", "text": "<p>And that refined luxury should feel personal and within reach.</p>" } } },
+      "block_order": ["philosophy_banner"],
+      "settings": { "anchor_id": "philosophy", "accessible_title": "Our philosophy", "columns": 1 }
+    },
+    "journey": {
+      "type": "jovaa-timeline",
+      "blocks": {
+        "year_1": { "type": "milestone", "settings": { "year": "2023", "heading": "The beginning", "text": "JOVAA launches in Egypt", "icon": "store" } },
+        "year_2": { "type": "milestone", "settings": { "year": "2024", "heading": "Thousands of customers", "text": "A growing community of luxury lovers", "icon": "people" } },
+        "year_3": { "type": "milestone", "settings": { "year": "2024–2025", "heading": "Growth and discovery", "text": "A wider edit of global brands", "icon": "box" } },
+        "year_4": { "type": "milestone", "settings": { "year": "The future", "heading": "A brighter future", "text": "Your destination for modern luxury", "icon": "diamond" } }
+      },
+      "block_order": ["year_1", "year_2", "year_3", "year_4"],
+      "settings": { "heading": "Our journey", "subheading": "OUR JOURNEY", "columns": 4, "hide_on_mobile": true }
+    },
+    "about_reviews": {
+      "type": "jovaa-testimonials",
+      "blocks": {
+        "review_1": { "type": "testimonial", "settings": { "rating": 5, "quote": "A refined experience, authentic products, and delivery faster than expected.", "name": "Sarah M.", "location": "Cairo" } },
+        "review_2": { "type": "testimonial", "settings": { "rating": 5, "quote": "My favorite fragrance and handbag destination in Egypt. Refined service and authentic products.", "name": "Ahmed K.", "location": "Giza" } },
+        "review_3": { "type": "testimonial", "settings": { "rating": 5, "quote": "Every detail, from the website to the packaging, feels considered and luxurious.", "name": "Nada H.", "location": "Alexandria" } }
+      },
+      "block_order": ["review_1", "review_2", "review_3"],
+      "settings": { "heading": "What our customers say", "subheading": "CUSTOMER LOVE" }
+    },
+    "about_social": {
+      "type": "jovaa-social-gallery",
+      "blocks": {
+        "one": { "type": "image", "settings": { "fallback_image": "hero", "label": "First JOVAA post" } }, "two": { "type": "image", "settings": { "fallback_image": "editorial", "label": "Second JOVAA post" } }, "three": { "type": "image", "settings": { "fallback_image": "handbag", "label": "Third JOVAA post" } }, "four": { "type": "image", "settings": { "fallback_image": "perfume", "label": "Fourth JOVAA post" } }, "five": { "type": "image", "settings": { "fallback_image": "cairo", "label": "Fifth JOVAA post" } }, "six": { "type": "image", "settings": { "fallback_image": "hero", "label": "Sixth JOVAA post" } }
+      },
+      "block_order": ["one", "two", "three", "four", "five", "six"],
+      "settings": { "heading": "Follow us on Instagram", "handle": "@jovaa.perfumes", "columns": 6 }
+    }
+  },
+  "order": ["about_hero", "our_story", "authenticity", "about_benefits", "philosophy", "journey", "about_reviews", "about_social"]
+}

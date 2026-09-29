@@ -1,0 +1,66 @@
+{%- assign heading_id = 'JovaaBenefits-' | append: section.id -%}
+<section class="jv-section jv-section--compact" aria-labelledby="{{ heading_id }}">
+  <div class="jv-shell">
+    {%- if section.settings.heading != blank -%}
+      {% render 'jovaa-heading', id: heading_id, eyebrow: section.settings.eyebrow, heading: section.settings.heading, subheading: section.settings.subheading %}
+    {%- else -%}
+      <h2 class="visually-hidden" id="{{ heading_id }}">{{ section.settings.accessible_title | escape }}</h2>
+    {%- endif -%}
+    <div class="jv-grid jv-benefits" style="--jv-columns: {{ section.settings.columns }};">
+      {%- for block in section.blocks -%}
+        <article class="jv-benefit" {{ block.shopify_attributes }} data-jovaa-reveal>
+          {% render 'jovaa-icon', icon: block.settings.icon %}
+          <div>
+            <h3>{{ block.settings.heading | escape }}</h3>
+            {%- if block.settings.text != blank -%}<p>{{ block.settings.text | escape }}</p>{%- endif -%}
+          </div>
+        </article>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "JOVAA • Benefits",
+  "tag": "section",
+  "class": "jovaa-section",
+  "max_blocks": 6,
+  "settings": [
+    { "type": "text", "id": "accessible_title", "label": "Accessible title", "default": "Store benefits" },
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow text" },
+    { "type": "text", "id": "heading", "label": "Heading" },
+    { "type": "text", "id": "subheading", "label": "English subtitle" },
+    { "type": "range", "id": "columns", "label": "Columns", "min": 2, "max": 6, "step": 1, "default": 4 }
+  ],
+  "blocks": [
+    {
+      "type": "benefit", "name": "Benefit",
+      "settings": [
+        {
+          "type": "select", "id": "icon", "label": "Icon", "default": "badge",
+          "options": [
+            { "value": "badge", "label": "Authenticity" }, { "value": "truck", "label": "Delivery" },
+            { "value": "card", "label": "Payment" }, { "value": "box", "label": "Order" },
+            { "value": "globe", "label": "Global" }, { "value": "diamond", "label": "Luxury" },
+            { "value": "shield", "label": "Protection" }, { "value": "heart", "label": "Heart" }
+          ]
+        },
+        { "type": "text", "id": "heading", "label": "Heading", "default": "100% authentic products" },
+        { "type": "text", "id": "text", "label": "Description", "default": "Sourced from trusted global brands" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "JOVAA • Benefits",
+      "blocks": [
+        { "type": "benefit" },
+        { "type": "benefit", "settings": { "icon": "truck", "heading": "Delivery across Egypt", "text": "Fast and reliable" } },
+        { "type": "benefit", "settings": { "icon": "card", "heading": "Secure payment", "text": "All major payment methods" } },
+        { "type": "benefit", "settings": { "icon": "box", "heading": "Easy ordering", "text": "A seamless shopping experience" } }
+      ]
+    }
+  ]
+}
+{% endschema %}
