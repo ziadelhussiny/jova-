@@ -5,6 +5,7 @@ import test from 'node:test';
 const indexTemplatePath = new URL('../templates/index.json', import.meta.url);
 const socialGalleryPath = new URL('../sections/jovaa-social-gallery.liquid', import.meta.url);
 const faqLinksPath = new URL('../sections/jovaa-faq-links.liquid', import.meta.url);
+const categoryGridPath = new URL('../sections/jovaa-category-grid.liquid', import.meta.url);
 
 async function readShopifyJson(path) {
   const source = await readFile(path, 'utf8');
@@ -44,4 +45,12 @@ test('FAQ cards without a destination are not misleading links back to the homep
 
   assert.match(source, /if block\.settings\.link != blank/);
   assert.doesNotMatch(source, /block\.settings\.link \| default: routes\.root_url/);
+});
+
+test('the category grid repairs the known empty all-products collection at render time', async () => {
+  const source = await readFile(categoryGridPath, 'utf8');
+
+  assert.match(source, /contains '\/collections\/all-products'/);
+  assert.match(source, /assign category_link = routes\.all_products_collection_url/);
+  assert.match(source, /href="\{\{ category_link \}\}"/);
 });

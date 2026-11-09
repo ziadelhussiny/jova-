@@ -9,6 +9,10 @@
     <div class="jv-grid jv-categories" style="--jv-columns: {{ section.settings.columns }};">
       {%- for block in section.blocks -%}
         {%- assign category_alt = block.settings.image.alt | default: block.settings.heading -%}
+        {%- assign category_link = block.settings.link | default: routes.all_products_collection_url -%}
+        {%- if category_link contains '/collections/all-products' or category_link == 'shopify://collections/all-products' -%}
+          {%- assign category_link = routes.all_products_collection_url -%}
+        {%- endif -%}
         {%- assign fallback_asset = 'jovaa-perfume.webp' -%}
         {%- assign fallback_mobile_asset = 'jovaa-perfume-mobile.webp' -%}
         {%- if block.settings.fallback_image == 'handbag' -%}
@@ -37,7 +41,7 @@
             <h3>{{ block.settings.heading | escape }}</h3>
             {%- if block.settings.english_heading != blank -%}<p lang="en">{{ block.settings.english_heading | escape }}</p>{%- endif -%}
             {%- if block.settings.button_label != blank -%}
-              <a class="jv-button jv-button--light" href="{{ block.settings.link | default: routes.all_products_collection_url }}">{{ block.settings.button_label | escape }}</a>
+              <a class="jv-button jv-button--light" href="{{ category_link }}">{{ block.settings.button_label | escape }}</a>
             {%- endif -%}
           </div>
         </article>
