@@ -5,6 +5,7 @@
     <div class="jv-grid jv-social" style="--jv-columns: {{ section.settings.columns }};" data-jovaa-reveal>
       {%- for block in section.blocks -%}
         {%- assign social_alt = block.settings.image.alt | default: block.settings.label -%}
+        {%- assign social_link = block.settings.link | default: section.settings.profile_link -%}
         {%- assign fallback_asset = 'jovaa-perfume.webp' -%}
         {%- assign fallback_mobile_asset = 'jovaa-perfume-mobile.webp' -%}
         {%- case block.settings.fallback_image -%}
@@ -13,7 +14,7 @@
           {%- when 'cairo' -%}{%- assign fallback_asset = 'jovaa-cairo.webp' -%}{%- assign fallback_mobile_asset = 'jovaa-cairo-mobile.webp' -%}
           {%- when 'hero' -%}{%- assign fallback_asset = 'jovaa-home-hero.webp' -%}{%- assign fallback_mobile_asset = 'jovaa-home-hero-mobile.webp' -%}
         {%- endcase -%}
-        <a class="jv-social__item" href="{{ block.settings.link | default: section.settings.profile_link }}" {{ block.shopify_attributes }} aria-label="{{ block.settings.label | escape }}">
+        {%- capture social_media -%}
           {%- if block.settings.image != blank -%}
             <picture>
               {%- if block.settings.mobile_image != blank -%}
@@ -31,7 +32,12 @@
           {%- else -%}
             {% render 'jovaa-fallback-image', image: fallback_asset, mobile_image: fallback_mobile_asset, alt: social_alt, sizes: '(max-width: 749px) 17vw, 17vw' %}
           {%- endif -%}
-        </a>
+        {%- endcapture -%}
+        {%- if social_link != blank -%}
+          <a class="jv-social__item" href="{{ social_link }}" {{ block.shopify_attributes }} aria-label="{{ block.settings.label | escape }}">{{ social_media }}</a>
+        {%- else -%}
+          <div class="jv-social__item" {{ block.shopify_attributes }}>{{ social_media }}</div>
+        {%- endif -%}
       {%- endfor -%}
     </div>
   </div>

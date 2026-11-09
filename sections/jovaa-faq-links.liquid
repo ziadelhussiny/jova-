@@ -4,11 +4,16 @@
     {% render 'jovaa-heading', id: heading_id, eyebrow: section.settings.eyebrow, heading: section.settings.heading, subheading: section.settings.subheading %}
     <div class="jv-grid jv-faq-links" style="--jv-columns: {{ section.settings.columns }};">
       {%- for block in section.blocks -%}
-        <a class="jv-faq-card" href="{{ block.settings.link | default: routes.root_url }}" {{ block.shopify_attributes }} data-jovaa-reveal>
+        {%- capture faq_content -%}
           {% render 'jovaa-icon', icon: block.settings.icon %}
           <h3>{{ block.settings.heading | escape }}</h3>
           {%- if block.settings.text != blank -%}<p>{{ block.settings.text | escape }}</p>{%- endif -%}
-        </a>
+        {%- endcapture -%}
+        {%- if block.settings.link != blank -%}
+          <a class="jv-faq-card" href="{{ block.settings.link }}" {{ block.shopify_attributes }} data-jovaa-reveal>{{ faq_content }}</a>
+        {%- else -%}
+          <div class="jv-faq-card" {{ block.shopify_attributes }} data-jovaa-reveal>{{ faq_content }}</div>
+        {%- endif -%}
       {%- endfor -%}
     </div>
   </div>
