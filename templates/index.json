@@ -33,7 +33,7 @@
             "heading": "Perfumes",
             "english_heading": "PERFUMES",
             "button_label": "Shop now",
-            "link": "shopify://collections/all"
+            "link": "shopify://collections/perfums"
           }
         },
         "bags": {
@@ -43,20 +43,32 @@
             "heading": "Handbags",
             "english_heading": "BAGS",
             "button_label": "Shop now",
-            "link": "shopify://collections/all"
+            "link": "shopify://collections/bags"
+          }
+        },
+        "category_dUcqYA": {
+          "type": "category",
+          "settings": {
+            "image": "shopify://shop_images/ChatGPT_Image_Nov_10_2026_05_53_05_AM.png",
+            "fallback_image": "perfume",
+            "heading": "Watches",
+            "english_heading": "Watches",
+            "button_label": "Shop now",
+            "link": "shopify://collections/watches"
           }
         }
       },
       "block_order": [
         "perfumes",
-        "bags"
+        "bags",
+        "category_dUcqYA"
       ],
       "settings": {
         "accessible_title": "Shop by category",
         "eyebrow": "",
         "heading": "",
         "subheading": "",
-        "columns": 2
+        "columns": 3
       }
     },
     "jovaa_products": {
@@ -138,7 +150,7 @@
             "heading": "Discover our exclusive fragrance edit",
             "text": "",
             "button_label": "Shop the collection",
-            "link": "shopify://collections/all"
+            "link": "shopify://collections/perfums"
           }
         },
         "bags": {
@@ -150,13 +162,27 @@
             "heading": "Timeless bags for every look",
             "text": "",
             "button_label": "Shop handbags",
-            "link": "shopify://collections/all"
+            "link": "shopify://collections/bags"
+          }
+        },
+        "banner_tDDmUc": {
+          "type": "banner",
+          "settings": {
+            "image": "shopify://shop_images/ChatGPT_Image_Nov_10_2026_05_53_05_AM.png",
+            "fallback_image": "editorial",
+            "content_position": "start",
+            "eyebrow": "A SCENT, A BETTER YOU",
+            "heading": "Discover our exclusive collection",
+            "text": "",
+            "button_label": "Shop now",
+            "link": "shopify://collections/watches"
           }
         }
       },
       "block_order": [
         "perfume",
-        "bags"
+        "bags",
+        "banner_tDDmUc"
       ],
       "settings": {
         "anchor_id": "",
@@ -164,7 +190,7 @@
         "eyebrow": "",
         "heading": "",
         "subheading": "",
-        "columns": 2
+        "columns": 3
       }
     },
     "jovaa_reviews": {
